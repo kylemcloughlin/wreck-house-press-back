@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  subtitles: MyString
+  author: MyString
+  notes: MyString
+  categorization: one
+  subcategorization: one
+
+two:
+  title: MyString
+  subtitles: MyString
+  author: MyString
+  notes: MyString
+  categorization: two
+  subcategorization: two
