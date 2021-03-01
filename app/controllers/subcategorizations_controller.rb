@@ -14,6 +14,8 @@ class SubcategorizationsController < ApplicationController
 
   # GET /subcategorizations/1
   def show
+    puts @subcategorization[:name]
+    puts @subcategorization.articles.length
     render json: @subcategorization.articles
   end
 
