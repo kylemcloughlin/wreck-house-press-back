@@ -4,8 +4,10 @@ class CreateArticles < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :subtitles
       t.string :author
-      t.string :photos
+      t.string :photos, array: true, default: []
       t.string :body
+      t.string :legacy
+      t.string :originalPost
       t.references :categorization, null: false, foreign_key: true
       t.references :subcategorization, null: true, foreign_key: true
 

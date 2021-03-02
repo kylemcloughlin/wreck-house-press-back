@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 2021_02_25_153017) do
     t.string "title"
     t.string "subtitles"
     t.string "author"
-    t.string "photos"
+    t.string "photos", default: [], array: true
     t.string "body"
+    t.string "legacy"
+    t.string "originalPost"
     t.bigint "categorization_id", null: false
     t.bigint "subcategorization_id"
     t.datetime "created_at", precision: 6, null: false

@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 articles = [{
    title: "On the bookshelf: Becoming Autism Friendly by Anne Laurie",
   subtitles: "",
@@ -677,109 +670,14 @@ The annual firefighter’s ball that had originally been scheduled for Sept. 19 
    categorization: "Local News",
   subcategorization: nil,
 }]
-@articles = Article.destroy_all
-@Subcategorization = Subcategorization.destroy_all
-@Categorization = Categorization.destroy_all
-
-cats = [{name: 'Top Story'},{name: 'Local News'},{name: 'Sports'},{name: 'Opinion'},{name: 'Community'},{name: 'The Arts'}]
-cats.each do |cat|
-  Categorization.create(cat)
-end
-@catagorie_1 = Categorization.find_by( name: 'Opinion')
-@catagorie_2 = Categorization.find_by( name: "Community")
-@catagorie_3 = Categorization.find_by( name: "The Arts")
-
-puts @catagorie_1
-puts @catagorie_2
-puts @catagorie_3
-
-sub_cats = [{ name: "Letters", categorization: @catagorie_1 }, 
-  { name: "Columnists", categorization: @catagorie_1 },  
-  { name: "Profile", categorization: @catagorie_2 }, 
-  { name: "Music Row", categorization: @catagorie_3 }, 
-  { name: "On The Bookshelf", categorization: @catagorie_3 }]
-  
-  puts sub_cats[3]
-  sub_cats.each do |sub_cat|
-    # cat = sub_cat[:categorization][:name]
-    @subcategorization = Subcategorization.create(sub_cat)
-    # puts ouput
-  end
-  # photos = ["https://static.wixstatic.com/media/3f4fd9_ce5aeef08ff8404882cbe864fed024a6~mv2.png/v1/fill/w_360,h_508,al_c,q_90,usm_0.66_1.00_0.01/3f4fd9_ce5aeef08ff8404882cbe864fed024a6~mv2.webp","https://static.wixstatic.com/media/3f4fd9_ab3d25650a734df1bb39a16a8f0a57dd~mv2.jpg/v1/fill/w_740,h_803,al_c,q_90,usm_0.66_1.00_0.01/3f4fd9_ab3d25650a734df1bb39a16a8f0a57dd~mv2.webp"]  
-  # photo = 'https://lh3.googleusercontent.com/nTDB1oJoZo9xJKH0IwJ8mOekj_Y7aInpE_9k6l67YojNRELVFa7oYHXIozkENgm2-YBPYNyO0IjTixJSIRKpCQceItwVk-d_ChkZSwuqrZwazN_3Hua8--gEZ8EiIFCeFIBN970Xx99oQHhb6Lpsz1FA7LNXtUp3S4z3cA42NJPS_0OhFUmAV9oopHOejFZHsOYo6mhd5OAvTfhDbYCpInb1Zpq-aDeKgxNZDDdcrgH2n8JJfC31w6XK_awdEVuJp7F2RHYjbYV9MnTTjhwMcfyt4YjSx_4F32J_ukiq7qc9hb49t-HPTtygiESWpV5qB0qLd01Xytl8vP0OukZaR8RpVgbNaDL8b8KTtcJUNF50jQ9eauI1bSwUmQrx3TX_kEFB2Bn6nfAelk46BXNmxuMsh2W4a9Tbhr7BF158xOMDuI_-3u093KJqsL69iC4UWJYdQZi_UX8pMHPepoftltjpZfLsJ7KEaRzyzhGtJNjTIDINTZe5DCKptXf2FPWx-LY8_YJU5y27uRQQicBL0DYiO5F5kvnio7mKUUSn7WZjYBB2K2s9SGT2iWu_hgR6jDm38w2I-CtloeNB8Z_gIjMuQ5Y4fO783IrezZYpJV8MikTdg8hOQiLjWPyy_oE55f9-_vVdTxpJ7K39Wk4RXr9QvO5Nx80iVuncWKyRfT36gQjCrH0UmGZj-da1=w901-h504-no?authuser=0'
-  
-  
-  # (1..50).each do |counter|
-    # puts "iteration #{counter}"
-    # cat_counter = rand(0..5)
-    # puts "iteration 2 #{cat_counter}"
-    # puts ""
-    # puts "iteration 2 #{cat_counter}"
-    # cat = Categorization.find_by(name: cats[cat_counter][:name])
-    #{cat[:name]}
-    
-    # case cat[:name]
-    # when "Opinion"
-    #   puts "#{cat[:name]}"
-    #   sub_cat = Subcategorization.find_by(name: sub_cats[rand(0..1)][:name])
-    # when "The Arts"
-    #   puts "#{cat[:name]}"
-    #   sub_cat = Subcategorization.find_by(name: sub_cats[rand(3..4)][:name])
-    #   # puts "Better luck next time"
-    # when "Community"
-    #   sub_cat = Subcategorization.find_by(name: "Profile")
-    #   puts "You can do better"
-    # else
-    #   puts "Alternative grading system, eh?"
-    #   sub_cat = nil
-    # end
-    
-    # author = 'John Doe'
-    # title = "article number #{counter} ---- Duis ut nulla at sem fermentum auctor."
-    # subtitles = " Cras fringilla tellus quis ante condimentum facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi feugiat nisl elit, ut tempor augue vestibulum ut. Ut ultrices velit neque, a tincidunt dolor vehicula "
-    
-    # Article.create({
-    #   title: title,
-    #   subtitles: subtitles,
-    #   author: author,
-    #   body:  limpson,
-    #   photos: photos,
-    #   categorization: cat,
-    #   subcategorization: sub_cat,
-    #   })
-    #   cat_counter += 1
-    #   # puts "iteration 2 #{cat_counter}"
-    # end
-    # # @subcategorization = Subcategorization.find_by(name: 'burner')
-    # @subcategorization.destroy 
-    articles.each do|cc|
-      sub_cat = nil 
-      case cc[:categorization]
-    when "Opinion"
-      # puts "#{cat[:name]}"
-      sub_cat = Subcategorization.find_by(name: cc[:subcategorization])
-    when "The Arts"
-      # puts "#{cat[:name]}"
-      sub_cat = Subcategorization.find_by(name: cc[:subcategorization])
-      # puts "Better luck next time"
-    when "Community"
-      sub_cat = Subcategorization.find_by(name: cc[:subcategorization])
-      puts "You can do better"
-    else
-      puts "Alternative grading system, eh?"
-      sub_cat = nil
-    end
-    Article.create({
-      title: cc[:title],
-      subtitles: cc[:subtitles],
-      author: cc[:author],
-      body: cc[:body],
-      photos: cc[:photos],
-      originalPost: cc[:originalPost],
-      legacy: cc[:legacy],
-      categorization: Categorization.find_by(name: cc[:categorization]),
-      subcategorization: sub_cat,
-    })
-    
-    end
-    puts 'done'
+# ,{
+#   title: "",
+#   subtitles: "",
+#   author: "",
+#   body: "",
+#     photos: [],
+#   originalPost: "08/24/2020",
+#    legacy: true,
+#    categorization: "",
+#   subcategorization: nil,
+# }
