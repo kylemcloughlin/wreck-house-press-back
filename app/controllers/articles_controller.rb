@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @articles = Article.first(5)
+    @articles = Article.all.order(id: :desc)
 
     render json: @articles
   end

@@ -3,20 +3,27 @@ class SubcategorizationsController < ApplicationController
 
   # GET /subcategorizations
   def index
-    puts 'hit'
+    puts 'hit index'
+    if params[:nav]
+    puts "hit if"
     puts params[:categorization_id]
     cat_id = params[:categorization_id]
     @categorization = Categorization.find_by(id:  cat_id)
     @subcategorizations =  @categorization.subcategorizations
-
     render json: @subcategorizations
+    else
+    puts "hiing else"
+    @subcategorization = Subcategorization.all
+    render json: @subcategorization
+    end
   end
 
   # GET /subcategorizations/1
   def show
-    puts @subcategorization[:name]
-    puts @subcategorization.articles.length
-    render json: @subcategorization.articles
+  
+
+
+    render json: { header: @subcategorization[:name], articles: @subcategorization.articles.order(id: :desc).first(5) }
   end
 
   # POST /subcategorizations
@@ -52,6 +59,6 @@ class SubcategorizationsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def subcategorization_params
-      params.require(:subcategorization).permit(:name, :categorization_id)
+      params.require(:subcategorization).permit(:name, :categorization_id, :nav)
     end
 end
