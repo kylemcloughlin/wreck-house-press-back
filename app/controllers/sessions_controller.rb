@@ -1,35 +1,47 @@
 class SessionsController < ApplicationController
-#  include currentUserConcern 
-#   def create
-#     user = User.find_by(email: params['user']["email"]).try(:authenticate, params["user"]["password"])
-#     if user
-#       session[:user_id] = user.id
-#       render json: {
-#         status: :created,
-#         logged_in: true,
-#         user: user
-#       }
-#     else
-#       render json: { status: 401}
-#     end
-#    def logged_in
-#     if @current_user
-#        render json: {
-#         logged_in: true,
-#         user: @current_user
-#       }
-#     else
-#       render json: {
-#         logged_in: false
-#       }
-#     end
-#   end
-   
-#     def destroy
-#         reset_session
+ before_action :set_user, only: [:show, :update, :destroy]
+  def create
+    user = User.find_by(email: params['user']["email"]).try(:authenticate, params["user"]["password"])
+    if user
+      session[:user_id] = user.id
+      render json: {
+        status: :created,
+        logged_in: true,
+        user: user
+      }
+    else
+      render json: { status: 401}
+  end
+end
+  def logged_in
+    if @current_user
+       render json: {
+        logged_in: true,
+        user: @current_user
+      }
+    else
+      render json: {
+        logged_in: false
+      }
+    end
+  end 
+  def destroy
+        reset_session
 
-#         # session[:user_id] = nil
-#         render json: { status: 200, logged_out: true}
-#     end
-#   end
+        # session[:user_id] = nil
+        render json: { status: 200, logged_out: true}
+  end
+  private
+
+# Use callbacks to share common setup or constraints between actions.
+ def set_current_user 
+    if session[:user_id] 
+      @current_user = User.find(session[:user_id])
+    end
+end
+
+# Only allow a trusted parameter "white list" through.
+# def user_params
+#   params.require(:user).permit(:email, :password_digest)
+# end
 end
