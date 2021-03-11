@@ -24,7 +24,7 @@ module WreckHousePressBack
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use ActionDispatch::Session::CookieStore key: "_wreck_house_press_back_session"
     config.middleware.insert_after(ActionDispatch::Cookies, ActionDispatch::Session::CookieStore)
 
     # Settings in config/environments/* take precedence over those specified here.
