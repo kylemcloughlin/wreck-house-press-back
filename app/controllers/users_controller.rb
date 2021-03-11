@@ -3,8 +3,6 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-  
-  puts params
     @user = User.create!(
      email: params['user']['email'],
       password: params['user']['password'],
@@ -13,8 +11,9 @@ class UsersController < ApplicationController
     )
       
     if @user
-      session[:user_id] = @user.id    
-      render json: @user, status: :created
+      session[:user_id] = @user.id   
+       puts "#{session[:user_id]}"
+      render json: { logged_in: true, user: @user }, status: :created
     else
       render json: {status: 500}
     end
