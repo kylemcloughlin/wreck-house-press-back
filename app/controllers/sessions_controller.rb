@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
   end
 end
   def logged_in
-
+puts ":::::::==>#{session[:user_id]}"
     if @current_user
        
       render json: { logged_in: true, user: @current_user }

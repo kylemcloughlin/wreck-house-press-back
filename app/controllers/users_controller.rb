@@ -12,7 +12,8 @@ class UsersController < ApplicationController
       
     if @user
       session[:user_id] = @user.id   
-       puts "#{session[:user_id]}"
+    puts ":::::::==>#{session[:user_id]}"
+puts "hit?????"
       render json: { logged_in: true, user: @user }, status: :created
     else
       render json: {status: 500}
