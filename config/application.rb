@@ -24,10 +24,10 @@ module WreckHousePressBack
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
-
+config.middleware.use config.session_store, config.session_options
     config.middleware.use ActionDispatch::Cookies
     # config.middleware.use config.session_store
-    config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use ActionDispatch::Session::CookieStore, key: "_wreck_house_press_back_session", domain: "wreck-house-press-back.herokuapp.com"
     config.middleware.insert_after(ActionDispatch::Cookies, ActionDispatch::Session::CookieStore)
 
     # Settings in config/environments/* take precedence over those specified here.
@@ -38,6 +38,6 @@ module WreckHousePressBack
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
-    config.api_only = false
+    config.api_only = true
   end
 end
