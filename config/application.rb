@@ -26,7 +26,7 @@ module WreckHousePressBack
 
 # config.middleware.use config.session_store, config.session_options
     config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore, key: "_wreck_house_press_back_session", domain: "https://wreck-house-press-back.herokuapp.com"
+    config.middleware.use ActionDispatch::Session::CookieStore, key: "_session_id", domain: "https://wreck-house-press-back.herokuapp.com"
     # config.middleware.insert_after(ActionDispatch::Cookies, ActionDispatch::Session::CookieStore)
 
     # Settings in config/environments/* take precedence over those specified here.
