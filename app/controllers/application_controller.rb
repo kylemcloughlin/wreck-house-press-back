@@ -1,6 +1,6 @@
-class ApplicationController < ActionController::Base
-# include ActionController::Cookies
-# include ActionController::RequestForgeryProtection
+class ApplicationController < ActionController::API
+include ActionController::Cookies
+include ActionController::RequestForgeryProtection
 end
 
 
