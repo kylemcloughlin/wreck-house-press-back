@@ -39,6 +39,9 @@ Rails.application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
   config.force_ssl = true
+# AppName::Application.config.session_store :cookie_store, :key => "_sample_app_session", :domain => ".myproductiondomain.com"
+
+
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
   config.log_level = :debug
