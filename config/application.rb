@@ -26,7 +26,7 @@ module WreckHousePressBack
 
 
     config.middleware.use ActionDispatch::Cookies
-    # config.middleware.use config.session_store, config.session_options
+    config.middleware.use config.session_store
     config.middleware.use ActionDispatch::Session::CookieStore, key: "_wreck_house_press_back_session"
     config.middleware.insert_after(ActionDispatch::Cookies, ActionDispatch::Session::CookieStore)
 
