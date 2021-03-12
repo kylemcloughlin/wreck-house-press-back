@@ -37,7 +37,7 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
   # config.force_ssl = true
 # WreckHousePressBack::Application.config.session_store :cookie_store, :key => "_session_id", :domain => :all
 # config.middleware.use ActionDispatch::Cookies
