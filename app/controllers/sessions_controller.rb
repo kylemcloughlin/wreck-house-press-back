@@ -1,14 +1,15 @@
 class SessionsController < ApplicationController
-  # attr_accessor :data 
-  # attr_reader :session_id
+  attr_accessor :data 
+  attr_reader :session_id
  before_action :set_current_user, only: [:show, :update, :destroy, :get, :logged_in]
   def create
 
     user = User.find_by(email: params["email"]).try(:authenticate, params["password"])
     if user
-      session[:user_id] = user.id
-      puts ":::::::==>#{session[:user_id]}"
-      puts "hit?????"
+      session[:data] = user.id
+      puts "user id:::::::==>#{session[:user_id]}"
+puts "data:::::::==>#{session[:data]}"
+puts "session_id:::::::==>#{session[:session_id]}"
       render json: {
         status: :created,
         logged_in: true,
@@ -19,7 +20,9 @@ class SessionsController < ApplicationController
   end
 end
   def logged_in
-puts ":::::::==>#{session[:user_id]}"
+puts "user id:::::::==>#{session[:user_id]}"
+puts "data:::::::==>#{session[:data]}"
+puts "session_id:::::::==>#{session[:session_id]}"
     if @current_user
        
       render json: { logged_in: true, user: @current_user }
@@ -32,17 +35,19 @@ puts ":::::::==>#{session[:user_id]}"
   def destroy
         reset_session
 
-        session[:user_id] = nil
+        session[:data] = nil
         render json: { status: 200, logged_in: false}
   end
   private
 
 # Use callbacks to share common setup or constraints between actions.
  def set_current_user 
- 
-  if session[:user_id] 
-    puts ":::::::==>#{session[:user_id]}"
-      @current_user = User.find(session[:user_id])
+puts "user id:::::::==>#{session[:user_id]}"
+puts "data:::::::==>#{session[:data]}"
+puts "session_id:::::::==>#{session[:session_id]}"
+  if session[:data] 
+    puts "::whithtih:::::==>#{session[:data]}"
+      @current_user = User.find(session[:data])
     end
 end
 
