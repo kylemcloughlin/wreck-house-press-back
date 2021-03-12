@@ -25,21 +25,23 @@ module WreckHousePressBack
     config.load_defaults 6.0
 
 # config.middleware.use config.session_store, config.session_options
-if Rails.env.production?
-  Rails.application.config.session_store :cookie_store, key: "_session_id", :domain => :all
+# if Rails.env.production?
+#   Rails.application.config.session_store :cookie_store, key: "_session_id", :domain => :all
   
-else
-   Rails.application.config.session_store :cookie_store, key: "_session_id"
-end    
+# else
+#    Rails.application.config.session_store :cookie_store, key: "_session_id"
+# end    
 
 
+Rails.application.config.session_store :active_record_store, :key => "_my_app_session"
 
 
-  #  Rails.application.config.session_store :active_record_store, :key => "_my_app_session"
   config.middleware.use ActionDispatch::Cookies 
-  # config.middleware.use ActionDispatch::Session::ActiveRecordStore
-      config.middleware.use ActionDispatch::Session::CookieStore
-     config.middleware.use config.session_store, config.session_options
+  config.middleware.use ActionDispatch::Session::ActiveRecordStore
+      # config.middleware.use ActionDispatch::Session::CookieStore
+     
+     
+      config.middleware.use config.session_store, config.session_options
 
 
     # config.middleware.insert_after(ActionDispatch::Cookies, ActionDispatch::Session::CookieStore)

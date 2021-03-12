@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  # attr_accessor :data 
+  # attr_reader :session_id
  before_action :set_current_user, only: [:show, :update, :destroy, :get, :logged_in]
   def create
 
