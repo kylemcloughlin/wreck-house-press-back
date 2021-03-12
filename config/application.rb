@@ -26,7 +26,7 @@ module WreckHousePressBack
 
 # config.middleware.use config.session_store, config.session_options
 if Rails.env.production?
-  Rails.application.config.session_store :cookie_store, key: "_session_id", domain: ["wreck-house-press-back.herokuapp"]
+  Rails.application.config.session_store :cookie_store, key: "_session_id", :domain => :all
   
 else
    Rails.application.config.session_store :cookie_store, key: "_session_id"
@@ -50,6 +50,6 @@ end
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
-    config.api_only = true
+    config.api_only = false
   end
 end
