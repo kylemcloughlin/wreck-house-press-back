@@ -26,7 +26,7 @@ module WreckHousePressBack
 
 # config.middleware.use config.session_store, config.session_options
 if Rails.env.production?
-  config.session_store :cookie_store, key: "_session_id", domain: "wreck-house-press-back.herokuapp.com"
+  config.session_store :cookie_store, key: "_session_id", domain: ".wreck-house-press-back.herokuapp.com"
   
 else
   config.session_store :cookie_store, key: "_session_id"
