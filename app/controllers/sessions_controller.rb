@@ -47,7 +47,7 @@ puts "data:::::::==>#{session[:data]}"
 puts "session_id:::::::==>#{session[:session_id]}"
   if session[:session_id] 
     puts "::whithtih:::::==>#{session[:data]}"
-      test = Session.find_by_session_id(session_id) 
+      test = Session.find_by_session_id(session[:session_id]) 
       puts "omgomgomg#{test[:data]}"
     @current_user = User.find(session[:data])
     end
