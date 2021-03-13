@@ -7,14 +7,13 @@ class UsersController < ApplicationController
      email: params['user']['email'],
       password: params['user']['password'],
       password_confirmation: params['user']['password_confrimation']
-
     )
       
     if @user
-      session[:user_id] = @user.id   
-    puts ":::::::==>#{session[:user_id]}"
-puts "hit?????"
-      render json: { logged_in: true, user: @user }, status: :created
+      payload = {user_id: @user.id}
+      token = create_token(payload)
+
+      render  locals:{token: token}, json: { logged_in: true, user: @user, token: token }, status: :created
     else
       render json: {status: 500}
     end
@@ -36,9 +35,9 @@ puts "hit?????"
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
+    # def set_user
+    #   @user = User.find(params[:id])
+    # end
 
     # Only allow a trusted parameter "white list" through.
     def user_params

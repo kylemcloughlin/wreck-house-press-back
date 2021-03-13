@@ -34,7 +34,7 @@ else
 Rails.application.config.session_store :cookie_store, :key => "_session_id"
 end    
 
-
+# config.autoload_paths << Rails.root.join("lib")
 
 
   config.middleware.use ActionDispatch::Cookies 
