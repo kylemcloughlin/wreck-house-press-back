@@ -12,8 +12,10 @@ require_relative "seed_data_three.rb"
 one = get_seed_one
 two = get_seed_two
 three = get_seed_three
-
-
+opts = [{ name: "option: 1", cost: 1099 }, { name: "Option 2", cost: 1499 }, { name: "Option 3", cost: 499 }]
+opts.each do |opt|
+  Subscription.create(opt)
+end
 cats = [{name: 'Top Story'},{name: 'Local News'},{name: 'Sports'},{name: 'Opinion'},{name: 'Community'},{name: 'The Arts'}]
 cats.each do |cat|
   Categorization.create(cat)

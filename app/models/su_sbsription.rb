@@ -1,0 +1,2 @@
+class SuSbsription < ApplicationRecord
+end
