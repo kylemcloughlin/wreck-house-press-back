@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       
     if @user
 
-      NotifierMailer.with(@user).welcome.deliver
+      # NotifierMailer.with(@user).welcome.deliver
       payload = {user_id: @user.id}
       token = create_token(payload)
 
