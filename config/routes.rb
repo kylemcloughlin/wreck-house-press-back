@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :subscriptions
-  resources :su_sbsriptions
   resources :users
   resources :sessions
   delete :logout, to: "sessions#destroy"

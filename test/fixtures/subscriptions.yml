@@ -2,8 +2,18 @@
 
 one:
   name: MyString
+  period: MyString
+  dis: MyString
+  validUntil: MyString
+  includes: MyString
+  foot: MyString
   cost: 1
 
 two:
   name: MyString
+  period: MyString
+  dis: MyString
+  validUntil: MyString
+  includes: MyString
+  foot: MyString
   cost: 1

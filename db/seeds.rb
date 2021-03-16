@@ -12,7 +12,33 @@ require_relative "seed_data_three.rb"
 one = get_seed_one
 two = get_seed_two
 three = get_seed_three
-opts = [{ name: "option: 1", cost: 1099 }, { name: "Option 2", cost: 1499 }, { name: "Option 3", cost: 499 }]
+opts = [{
+  name: "Annual Digital $60",
+  period: "60 Every Year",
+  validUntil: "",
+  dis: "A year of content from the Wreckhouse Weekly Print edition",
+  includes: "Automatically entered into all contest & promotions",
+  foot: "Billed Anually. Taxes extra",
+  cost: 60
+}, {
+  name: "6-Month Digital",
+  period: "5 Every Month",
+  validUntil: "6 months",
+  dis: "All content from the Wreckhouse Weekly print edition",
+  includes: "Automatically entered into all contest & promotions",
+  foot: "Billed Anually. Taxes extra",
+  cost: 5
+},
+ {
+  name: "3-Month Digital",
+  period: "5 Every Month",
+  dis: "All content from the Wreckhouse Weekly print edition.",
+  validUntil: "3 months",
+  includes: "Automatically entered into all contest & promotions",
+  foot: "Billed Anually. Taxes extra",
+  cost: 5
+
+}]
 opts.each do |opt|
   Subscription.create(opt)
 end
@@ -171,3 +197,8 @@ end
     #   puts "title:#{cc[:title]} body:#{array.length}--"
 
     # end
+
+
+
+
+  
