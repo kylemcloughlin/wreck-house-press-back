@@ -5,6 +5,7 @@ class CreateArticles < ActiveRecord::Migration[6.0]
       t.string :subtitles
       t.string :author
       t.string :photos, array: true, default: []
+      t.string :fallback, array: true, default: []
       t.string :body, array: true, default: []
       t.string :legacy
       t.string :originalPost

@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_163452) do
     t.string "subtitles"
     t.string "author"
     t.string "photos", default: [], array: true
+    t.string "fallback", default: [], array: true
     t.string "body", default: [], array: true
     t.string "legacy"
     t.string "originalPost"

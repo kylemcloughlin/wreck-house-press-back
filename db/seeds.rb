@@ -69,7 +69,7 @@ sub_cats = [{ name: "Letters", categorization: @catagorie_1 },
 
     one.each do|cc|
       # sub_cat = nil
-    puts"#{cc[:title]}" 
+
       categorization = Categorization.find_by(name: cc[:categorization])
       array = cc[:body].split(/\n+/)
     
@@ -88,18 +88,34 @@ sub_cats = [{ name: "Letters", categorization: @catagorie_1 },
         # puts "Alternative grading system, eh?"
         sub_cat = nil
       end
+      
+
+      photos =  cc[:photos]
+  fallback_imgs = []
+  photos.each do |photo|
+
+    splt = photo.split(".")
+    splt.pop
+    splt.push("jpg")
+    nw = splt.join(".")
+
+  fallback_imgs.push(nw)
+
+  end
+
       art =Article.create({
         title: cc[:title],
         subtitles: cc[:subtitles],
         author: cc[:author],
         body: array,
         photos: cc[:photos],
+        fallback: fallback_imgs,
         originalPost: cc[:originalPost],
         legacy: cc[:legacy],
         categorization: categorization,
         subcategorization: sub_cat,
       })
-        puts art.id
+       puts art.photos.length
     end
   
 
@@ -123,18 +139,30 @@ sub_cats = [{ name: "Letters", categorization: @catagorie_1 },
     # puts "Alternative grading system, eh?"
     sub_cat = nil
   end
+photos = cc[:photos]
+fallback_imgs = []
+photos.each do |photo|
+  splt = photo.split(".")
+  splt.pop
+  splt.push("jpg")
+  nw = splt.join(".")
+
+  fallback_imgs.push(nw)
+end
+
   art = Article.create({
     title: cc[:title],
     subtitles: cc[:subtitles],
     author: cc[:author],
     body: array,
     photos: cc[:photos],
+    fallback: fallback_imgs,
     originalPost: cc[:originalPost],
     legacy: cc[:legacy],
     categorization: categorization,
     subcategorization: sub_cat,
   })
-  puts art.id
+  puts art.photos.length
 end
 three.each do |cc|
   # sub_cat = nil
@@ -156,18 +184,33 @@ three.each do |cc|
     # puts "Alternative grading system, eh?"
     sub_cat = nil
   end
+  # puts "#{cc[:photos]}"
+  photos =  cc[:photos]
+  fallback_imgs = []
+  photos.each do |photo|
+
+    splt = photo.split(".")
+    splt.pop
+    splt.push("jpg")
+    nw = splt.join(".")
+
+  fallback_imgs.push(nw)
+
+  end
+  puts "#{fallback_imgs}"
   art = Article.create({
     title: cc[:title],
     subtitles: cc[:subtitles],
     author: cc[:author],
     body: array,
+    fallback: fallback_imgs,
     photos: cc[:photos],
     originalPost: cc[:originalPost],
     legacy: cc[:legacy],
     categorization: categorization,
     subcategorization: sub_cat,
   })
-  puts art.id
+  # puts art.photos.length
 end
     
     
