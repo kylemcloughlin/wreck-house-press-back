@@ -12,7 +12,7 @@ puts'index'
   # GET /categorizations/1
   def show
     puts params[:name]
-    render json: { header: @categorization[:name], articles: @categorization.articles.order(id: :desc) }
+    render json: { header: @categorization[:name], articles: @categorization.articles.order(id: :desc) , subcategorizations: @categorization.subcategorizations}
   end
 
   # POST /categorizations
