@@ -9,6 +9,11 @@ require_relative "seed_data_three.rb"
 @Categorization = Categorization.destroy_all
 
 
+
+
+
+
+
 one = get_seed_one
 two = get_seed_two
 three = get_seed_three
