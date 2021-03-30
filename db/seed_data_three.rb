@@ -466,7 +466,7 @@ To date AstraZeneca has only been approved in the U.K., but Thomas believes it w
   originalPost: "01/11/2021",
   subcategorization: nil,
 },{
-  title: "EDITOR---Of pride and resolutions",
+  title: "From the editors desk: Of pride and resolutions",
   categorization: "Opinion",
   photos: ["https://static.wixstatic.com/media/3f4fd9_630aaace5e914e27b9f5eaf9e52924f5~mv2.jpg/v1/fill/w_360,h_285,al_c,q_90,usm_0.66_1.00_0.01/3f4fd9_630aaace5e914e27b9f5eaf9e52924f5~mv2.webp"],
   subtitles: "J. René Roy - Editor",
@@ -876,16 +876,6 @@ This story continues on Monday, January 18, 2021 in Part 2: The Decision for MAi
   originalPost: "01/11/2021",
   subcategorization: nil,
   },{
-    title: "",
-    categorization: "Community",
-    photos: [""],
-    subtitles: "",
-    body: "",
-    legacy: true,
-    author: "Rosalyn Roy Staff Reporter",
-    originalPost: "01/11/2021",
-  subcategorization: nil,
-},{
   title: "Creative, crafty and off the grid in Codroy Valley",
   categorization: "Community",
   photos: ["https://static.wixstatic.com/media/3f4fd9_d6f2f4b7976e4d68a33614113a243dac~mv2.jpg/v1/fill/w_740,h_368,al_c,q_90,usm_0.66_1.00_0.01/3f4fd9_d6f2f4b7976e4d68a33614113a243dac~mv2.webp"],
@@ -4834,7 +4824,7 @@ Without hesitation, I give it 5 stars!",
     },
     {
       title: "The Edge of Lori - March 1, 2021",
-      categorization: "https://static.wixstatic.com/media/3f4fd9_5a8a8138a5694566914ed36766b2a0eb~mv2.jpg/v1/fill/w_360,h_480,al_c,q_90,usm_0.66_1.00_0.01/3f4fd9_5a8a8138a5694566914ed36766b2a0eb~mv2.webp",
+      categorization: "Sports",
       photos: ["https://static.wixstatic.com/media/3f4fd9_5a8a8138a5694566914ed36766b2a0eb~mv2.jpg/v1/fill/w_360,h_480,al_c,q_90,usm_0.66_1.00_0.01/3f4fd9_5a8a8138a5694566914ed36766b2a0eb~mv2.webp"],
       subtitles: "Tucker does not appreciate you blaming the reverse retro Habs sweater. - © Gonzo Bennett",
       body: "Here’s what you need to know this week about the sports you love.

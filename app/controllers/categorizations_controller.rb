@@ -12,12 +12,7 @@ puts'index'
   # GET /categorizations/1
   def show
     puts params[:name]
-    if @categorization.subcategorizations.nil?
-      puts "hit"
-    else
-      puts "hisssst"
-      puts "#{@categorization.articles}"
-    end
+    puts @categorization.subcategorizations.length
 
     render json: { header: @categorization[:name], articles: @categorization.articles.order(id: :desc), subcategorizations: @categorization.subcategorizations.order(id: :desc)}
   end

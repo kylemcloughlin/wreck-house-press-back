@@ -23,7 +23,7 @@ class SubcategorizationsController < ApplicationController
   
 
 
-    render json: { header: @subcategorization[:name], articles: @subcategorization.articles.order(id: :desc).first(5) }
+    render json: { header: @subcategorization[:name], articles: @subcategorization.articles.order(id: :desc) }
   end
 
   # POST /subcategorizations

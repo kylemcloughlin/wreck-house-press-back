@@ -8,7 +8,7 @@ class CreateSubscriptions < ActiveRecord::Migration[6.0]
       t.string :includes
       t.string :foot
       t.integer :cost
-
+      t.string :stripe
       t.timestamps
     end
   end

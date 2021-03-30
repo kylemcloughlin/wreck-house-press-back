@@ -1,15 +1,11 @@
 class SessionsController < ApplicationController
 #  skip_before_action :authenticate, only: [:create]
   def create
-    puts "hit"
-    puts"params #{params}"
-    puts "hit"
     @user = User.find_by(email: params["email"]).try(:authenticate, params["password"])
-    puts "hit pre if"
+    
 
     if @user
     puts "hit in  if"
-
         payload ={user_id: @user.id}
         # secret = ENV['SECRET_KEY_BASE'] || Rails.application.secrets.secret_key_base
     puts "hit pre token"

@@ -1,8 +1,11 @@
+
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :update, :destroy]
 
   # GET /articles
   def index
+    puts ENV['MAIL_USERNAME']
+    puts "tesr"
     @articles = Article.all.order(id: :desc)
 
     render json: @articles
