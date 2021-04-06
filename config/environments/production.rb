@@ -10,8 +10,8 @@ Rails.application.configure do
    :address              => 'smtp.gmail.com',
       :port                 => 587,
       :domain               => 'wreckhousepress.com',
-      :user_name            => env['USER_NAME'],
-      :password             => env['EMAIL_PASS'],
+      :user_name            => ENV['USER_NAME'],
+      :password             => ENV['EMAIL_PASS'],
       :authentication       => 'login',
 
   }
