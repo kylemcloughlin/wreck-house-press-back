@@ -20,10 +20,10 @@ class SubcategorizationsController < ApplicationController
 
   # GET /subcategorizations/1
   def show
-  
 
+ categorization = Categorization.find(@subcategorization.categorization_id)
 
-    render json: { header: @subcategorization[:name], articles: @subcategorization.articles.order(id: :desc) }
+    render json: { header: @subcategorization[:name], articles: @subcategorization.articles.order(id: :desc), subcategorizations: categorization.subcategorizations.order(id: :desc)  }
   end
 
   # POST /subcategorizations
@@ -54,7 +54,9 @@ class SubcategorizationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_subcategorization
-      @subcategorization = Subcategorization.find(params[:id])
+      
+        
+      @subcategorization = Subcategorization.find_by(name: params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

@@ -3159,8 +3159,8 @@ He knows the NL Alliance is fighting an uphill battle when it comes to political
       originalPost: "02/01/2021",
       subcategorization: nil,
     },{
-      title: "",
-      categorization: "Sports: The Edge of Lori",
+      title: "Sports: The Edge of Lori",
+      categorization: "Sports",
       photos: ["https://static.wixstatic.com/media/3f4fd9_be2cab24386741c5af4ddc0967eaf6e0~mv2.jpg/v1/fill/w_360,h_480,al_c,q_90,usm_0.66_1.00_0.01/3f4fd9_be2cab24386741c5af4ddc0967eaf6e0~mv2.webp"],
       subtitles: "Lance is doing some serious emotional eating following the departure of his favourite player, Patrick Laine. - courtesy of Olive & Erin Martin",
       body: "Here’s what you need to know this week about the sports you love.

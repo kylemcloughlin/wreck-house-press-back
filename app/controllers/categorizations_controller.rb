@@ -11,16 +11,13 @@ puts'index'
 
   # GET /categorizations/1
   def show
-    puts params[:name]
-    puts @categorization.subcategorizations.length
-
+    puts params
     render json: { header: @categorization[:name], articles: @categorization.articles.order(id: :desc), subcategorizations: @categorization.subcategorizations.order(id: :desc)}
   end
 
   # POST /categorizations
   def create
     @categorization = Categorization.new(categorization_params)
-
     if @categorization.save
       render json: @categorization, status: :created, location: @categorization
     else
@@ -45,7 +42,9 @@ puts'index'
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_categorization
-      @categorization = Categorization.find(params[:id])
+      puts params
+      # byebug
+      @categorization = Categorization.find_by(name: params[:name])
     end
 
     # Only allow a trusted parameter "white list" through.

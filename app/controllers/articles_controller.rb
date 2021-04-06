@@ -1,11 +1,9 @@
-
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :update, :destroy]
 
   # GET /articles
   def index
-    puts ENV['MAIL_USERNAME']
-    puts "tesr"
+    
     @articles = Article.all.order(id: :desc)
 
     render json: @articles
@@ -13,13 +11,48 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   def show
+  # byebug
     render json: @article
   end
 
   # POST /articles
   def create
-    @article = Article.new(article_params)
+    puts params
+    input = params[:article]
+    cat_id = input[:category]
+    sub_cat = input[:subcategory]
+    category = Categorization.find(cat_id.to_i)
 
+    case sub_cat.to_i
+    when 1
+      subcategory = Subcategorization.find(sub_cat.to_i) 
+    when 2
+      subcategory = Subcategorization.find(sub_cat.to_i)
+    when 3
+      subcategory = Subcategorization.find(sub_cat.to_i)
+    when 4
+      subcategory = Subcategorization.find(sub_cat.to_i)
+    when 5
+      subcategory = Subcategorization.find(sub_cat.to_i)
+    else
+      subcategory = nil
+    end
+    # byebug
+    
+    @article = Article.new({
+      title: input[:title],
+      subtitles: input[:subtitles],
+      author: input[:author],
+      body: input[:body],
+      breaking: input[:breaking],
+      photos: input[:photos],
+      fallback: input[:photos],
+      rt: input[:rt],
+      originalPost: '03/30/2021',
+      legacy: false,
+      categorization: category,
+      subcategorization: subcategory,
+    })
     if @article.save
       render json: @article, status: :created, location: @article
     else
@@ -42,13 +75,15 @@ class ArticlesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def article_params
-      params.require(:article).permit(:title, :subtitles, :author, :notes, :categorization_id, :subcategorization_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_article
+    # byebug
+    @article = Article.find_by(url: params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def article_params
+    params.require(:article).permit(:title, :subtitles, :author, :notes, :rt, :category, :breaking, :subcategory, :photos, :body, :categorization_id, :subcategorization_id)
+  end
 end

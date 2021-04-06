@@ -1,0 +1,15 @@
+<div> 
+  <h2>checkoutout confirmation</h2>
+  <div>
+  <p> hello <%= @name %>,</p>
+  <p> this is a payment receipt for <%= @invoice_id %> created on <%= @date %> </p>
+  <div>
+  <p>number: <%= @invoice_number %></p>  
+  <p>Total: <%=@invoice_total%></p>
+  <p>Status: <%= @invoice_status %></p>
+  </div>
+  <p> a hosted invoice can be viewed<a href="#{@hosted_invoice}"> here</a></p>
+  <p>Regards, Wreckhouse Press Team</p>
+  <p>please dont reply directly to this email, if needed, get in touch through<a href="#{@hosted_invoice}"> here</a></p>
+  </div>
+</div>

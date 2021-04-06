@@ -1,7 +1,7 @@
 require_relative 'seed_data.rb'
 require_relative 'seed_data_two.rb'
 require_relative "seed_data_three.rb"
-
+require_relative "seed_data_four.rb"
 # require_relative 'file1.rb'
 
 @articles = Article.destroy_all
@@ -17,6 +17,9 @@ require_relative "seed_data_three.rb"
 one = get_seed_one
 two = get_seed_two
 three = get_seed_three
+four = get_seed_four
+
+
 opts = [{
   name: "Annual Digital",
   period: "60 Every Year",
@@ -66,7 +69,7 @@ sub_cats = [{ name: "Letters", categorization: @catagorie_1 },
   { name: "Music Row", categorization: @catagorie_3 }, 
   { name: "On The Bookshelf", categorization: @catagorie_3 }]
   
-  puts sub_cats[3]
+  # puts sub_cats[3]
   sub_cats.each do |sub_cat|
     # cat = sub_cat[:categorization][:name]
     @subcategorization = Subcategorization.create(sub_cat)
@@ -74,7 +77,7 @@ sub_cats = [{ name: "Letters", categorization: @catagorie_1 },
   end
   
 
-
+puts 'start'
     one.each do|cc|
       # sub_cat = nil
 
@@ -82,45 +85,45 @@ sub_cats = [{ name: "Letters", categorization: @catagorie_1 },
       array = cc[:body].split(/\n+/)
         # puts cc[:title]
       if cc[:title].match(/Roz/)
-        puts cc[:title]
+        # puts cc[:title]
         cc[:categorization] = "Opinion"
         cc[:subcategorization] = "Columnists"
       end
       if cc[:title].match(/Cooking/)
-        puts cc[:title]
+        # puts cc[:title]
         cc[:categorization] = "Opinion"
         cc[:subcategorization] = "Columnists"
       end
       if cc[:title].match(/seniors/)
-        puts cc[:title]
+        # puts cc[:title]
           cc[:categorization] = "Community"
           cc[:subcategorization] = "Profile"
       end
       if cc[:title].match(/Highlights/)
-        puts cc[:title]
+        # puts cc[:title]
       end
       if cc[:title].match(/Author profile/)
-        puts cc[:title]
+        # puts cc[:title]
           cc[:categorization] = "Community"
           cc[:subcategorization] = "Profile"
       end
       if cc[:title].match(/Horoscopes/)
-        puts cc[:title]
+        # puts cc[:title]
         cc[:categorization] = "Opinion"
         cc[:subcategorization] = "Columnists"
       end
       if cc[:title].match(/to the editor/)
-        puts cc[:title]
+        # puts cc[:title]
         cc[:categorization] = "Opinion"
         cc[:subcategorization] = "Letters"
       end
       if cc[:title].match(/From the editor's desk/)
-        puts cc[:title]
+        # puts cc[:title]
         cc[:categorization] = "Opinion"
         cc[:subcategorization] = "Columnists"
       end
       if cc[:title].match(/On the Bookshelf/)
-        puts cc[:title]
+        # puts cc[:title]
         cc[:categorization] = "The Arts"
         cc[:subcategorization] = "On The Bookshelf"
       end
@@ -154,23 +157,36 @@ sub_cats = [{ name: "Letters", categorization: @catagorie_1 },
   fallback_imgs.push(nw)
 
   end
-  puts "   "
-  puts cc[:title]
-  puts cc[:categorization]
-  puts cc[:subcategorization]
-  puts "   " 
+ length = Article.count
+y = cc[:title].split(" ")
+
+ x = y.select { |v| v != "-"}
+ xx = x.select { |v| v != "&"}
+# puts xx
+z = xx.push(length).join("-").downcase
+url = z.tr("(-).',?><!@{$%^&*}:#", "")
+  
       art =Article.create({
         title: cc[:title],
         subtitles: cc[:subtitles],
         author: cc[:author],
         body: array,
+        breaking: false,
         photos: cc[:photos],
         fallback: fallback_imgs,
         originalPost: cc[:originalPost],
         legacy: cc[:legacy],
+        url: url,
+        rt: "5",
         categorization: categorization,
         subcategorization: sub_cat,
       })
+        puts ""
+puts "#{art.url}"
+  puts ""
+
+# puts "#{art.url}"
+
     end
   
 
@@ -180,57 +196,57 @@ sub_cats = [{ name: "Letters", categorization: @catagorie_1 },
   array = cc[:body].split(/\n+/)
 
     if cc[:title].match(/Roz/)
-      puts cc[:title]
+      # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
     if cc[:title].match(/Cooking/)
-      puts cc[:title]
+      # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
     if cc[:title].match(/seniors/)
-      puts cc[:title]
+      # puts cc[:title]
         cc[:categorization] = "Community"
         cc[:subcategorization] = "Profile"
     end
     if cc[:title].match(/neighbour:/)
-      puts cc[:title]
+      # puts cc[:title]
         cc[:categorization] = "Community"
         cc[:subcategorization] = "Profile"
     end
     if cc[:title].match(/Music Row/)
-      puts cc[:title]
+      # puts cc[:title]
       cc[:categorization] = "The Arts"
       cc[:subcategorization] = "Music Row"
     end
     if cc[:title].match(/Author profile/)
-      puts cc[:title]
+      # puts cc[:title]
         cc[:categorization] = "Community"
         cc[:subcategorization] = "Profile"
     end
     if cc[:title].match(/Horoscopes/)
-      puts cc[:title]
+      # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
     if cc[:title].match(/to the editor/)
-      puts cc[:title]
+      # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Letters"
     end
     if cc[:title].match(/From the editor's desk/)
-      puts cc[:title]
+      # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
     if cc[:title].match(/On the Bookshelf/)
-      puts cc[:title]
+      # puts cc[:title]
       cc[:categorization] = "The Arts"
       cc[:subcategorization] = "On The Bookshelf"
     end
 if cc[:title].match(/Letter/)
-  puts cc[:title]
+  # puts cc[:title]
   cc[:categorization] = "Opinion"
   cc[:subcategorization] = "Letters"
 end
@@ -262,24 +278,34 @@ photos.each do |photo|
 
   fallback_imgs.push(nw)
 end
-puts "   "
-puts cc[:title]
-puts cc[:categorization]
-puts cc[:subcategorization]
-puts "   "
 
+
+length = Article.count
+y = cc[:title].split(" ")
+x = y.select { |v| v != "-" }
+ xx = x.select { |v| v != "&"}
+
+z = xx.push(length).join("-").downcase
+url = z.tr("(-).',?><!@{$%^&*}:#", "")
   art = Article.create({
     title: cc[:title],
     subtitles: cc[:subtitles],
     author: cc[:author],
     body: array,
+    breaking: false,
     photos: cc[:photos],
     fallback: fallback_imgs,
     originalPost: cc[:originalPost],
     legacy: cc[:legacy],
+    url: url,
+    rt: "7",
     categorization: categorization,
     subcategorization: sub_cat,
   })
+  puts ""
+puts "#{art.url}"
+  puts ""
+
 end
 three.each do |cc|
   # sub_cat = nil
@@ -287,57 +313,57 @@ three.each do |cc|
   array = cc[:body].split(/\n+/)
 
    if cc[:title].match(/Roz/)
-      puts cc[:title]
+      # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
     if cc[:title].match(/Cooking/)
-      puts cc[:title]
+      # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
     if cc[:title].match(/seniors/)
-      puts cc[:title]
+      # puts cc[:title]
         cc[:categorization] = "Community"
         cc[:subcategorization] = "Profile"
     end
     if cc[:title].match(/neighbour:/)
-      puts cc[:title]
+      # puts cc[:title]
         cc[:categorization] = "Community"
         cc[:subcategorization] = "Profile"
     end
     if cc[:title].match(/Music Row/)
-      puts cc[:title]
+      # puts cc[:title]
       cc[:categorization] = "The Arts"
       cc[:subcategorization] = "Music Row"
     end
     if cc[:title].match(/Author profile/)
-      puts cc[:title]
+      # puts cc[:title]
         cc[:categorization] = "Community"
         cc[:subcategorization] = "Profile"
     end
     if cc[:title].match(/Horoscopes/)
-      puts cc[:title]
+      # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
     if cc[:title].match(/Letter/)
-  puts cc[:title]
+  # puts cc[:title]
   cc[:categorization] = "Opinion"
   cc[:subcategorization] = "Letters"
 end
     if cc[:title].match(/to the editor/)
-      puts cc[:title]
+      # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Letters"
     end
     if cc[:title].match(/From the editor/)
-      puts cc[:title]
+      # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
     if cc[:title].match(/On the Bookshelf/)
-      puts cc[:title]
+      # puts cc[:title]
       cc[:categorization] = "The Arts"
       cc[:subcategorization] = "On The Bookshelf"
     end  
@@ -369,11 +395,13 @@ end
   fallback_imgs.push(nw)
 
   end
-  puts "   "
-puts cc[:title]
-puts cc[:categorization]
-puts cc[:subcategorization]
-puts "   "
+
+length = Article.count
+y = cc[:title].split(" ")
+x = y.select { |v| v != "-" }
+ xx = x.select { |v| v != "&"}
+z = xx.push(length).join("-").downcase!
+url = z.tr("(-).',?><!@{$%^&*}:#", "")
   art = Article.create({
     title: cc[:title],
     subtitles: cc[:subtitles],
@@ -381,13 +409,137 @@ puts "   "
     body: array,
     fallback: fallback_imgs,
     photos: cc[:photos],
+    breaking: false,
     originalPost: cc[:originalPost],
     legacy: cc[:legacy],
+    url: url,
+    rt: "4",
+    categorization: categorization,
+    subcategorization: sub_cat,
+  }
+  )
+    puts ""
+puts "#{art.url}"
+  puts ""
+
+end
+    
+four.each do |cc|
+  # sub_cat = nil
+  categorization = Categorization.find_by(name: cc[:categorization])
+  array = cc[:body].split(/\n+/)
+
+   if cc[:title].match(/Roz/)
+      # puts cc[:title]
+      cc[:categorization] = "Opinion"
+      cc[:subcategorization] = "Columnists"
+    end
+    if cc[:title].match(/Cooking/)
+      # puts cc[:title]
+      cc[:categorization] = "Opinion"
+      cc[:subcategorization] = "Columnists"
+    end
+    if cc[:title].match(/seniors/)
+      # puts cc[:title]
+        cc[:categorization] = "Community"
+        cc[:subcategorization] = "Profile"
+    end
+    if cc[:title].match(/neighbour:/)
+      # puts cc[:title]
+        cc[:categorization] = "Community"
+        cc[:subcategorization] = "Profile"
+    end
+    if cc[:title].match(/Music Row/)
+      # puts cc[:title]
+      cc[:categorization] = "The Arts"
+      cc[:subcategorization] = "Music Row"
+    end
+    if cc[:title].match(/Author profile/)
+      # puts cc[:title]
+        cc[:categorization] = "Community"
+        cc[:subcategorization] = "Profile"
+    end
+    if cc[:title].match(/Horoscopes/)
+      # puts cc[:title]
+      cc[:categorization] = "Opinion"
+      cc[:subcategorization] = "Columnists"
+    end
+    if cc[:title].match(/Letter/)
+  # puts cc[:title]
+  cc[:categorization] = "Opinion"
+  cc[:subcategorization] = "Letters"
+end
+    if cc[:title].match(/to the editor/)
+      # puts cc[:title]
+      cc[:categorization] = "Opinion"
+      cc[:subcategorization] = "Letters"
+    end
+    if cc[:title].match(/From the editor/)
+      # puts cc[:title]
+      cc[:categorization] = "Opinion"
+      cc[:subcategorization] = "Columnists"
+    end
+    if cc[:title].match(/On the Bookshelf/)
+      # puts cc[:title]
+      cc[:categorization] = "The Arts"
+      cc[:subcategorization] = "On The Bookshelf"
+    end  
+  case cc[:categorization]
+  when "Opinion"
+    # puts "#{cat[:name]}"
+    sub_cat = Subcategorization.find_by(name: cc[:subcategorization])
+  when "The Arts"
+    # puts "#{cat[:name]}"
+    sub_cat = Subcategorization.find_by(name: cc[:subcategorization])
+    # puts "Better luck next time"
+  when "Community"
+    sub_cat = Subcategorization.find_by(name: cc[:subcategorization])
+    # puts "You can do better"
+  else
+    # puts "Alternative grading system, eh?"
+    sub_cat = nil
+  end
+  # puts "#{cc[:photos]}"
+  photos =  cc[:photos]
+  fallback_imgs = []
+  photos.each do |photo|
+
+    splt = photo.split(".")
+    splt.pop
+    splt.push("jpg")
+    nw = splt.join(".")
+
+  fallback_imgs.push(nw)
+
+  end
+
+length = Article.count
+y = cc[:title].split(" ")
+x = y.select { |v| v != "-" }
+ xx = x.select { |v| v != "&"}
+z = xx.push(length).join("-").downcase()
+url = z.tr("(-).',?><!@{$%^&*}:#", "")
+# puts "#{url}"
+  art = Article.create({
+    title: cc[:title],
+    subtitles: cc[:subtitles],
+    author: cc[:author],
+    body: array,
+    fallback: fallback_imgs,
+    photos: cc[:photos],
+    breaking: false,
+    originalPost: cc[:originalPost],
+    legacy: cc[:legacy],
+    rt: cc[:rt],
+    url: url,
     categorization: categorization,
     subcategorization: sub_cat,
   })
+  puts ""
+puts "#{art.url}"
+  puts ""
+
 end
-    
     
     
     

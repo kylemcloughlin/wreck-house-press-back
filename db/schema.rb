@@ -22,8 +22,11 @@ ActiveRecord::Schema.define(version: 2021_03_16_163452) do
     t.string "photos", default: [], array: true
     t.string "fallback", default: [], array: true
     t.string "body", default: [], array: true
+    t.boolean "breaking"
+    t.string "rt"
     t.string "legacy"
     t.string "originalPost"
+    t.string "url"
     t.bigint "categorization_id", null: false
     t.bigint "subcategorization_id"
     t.datetime "created_at", precision: 6, null: false
@@ -71,6 +74,13 @@ ActiveRecord::Schema.define(version: 2021_03_16_163452) do
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
+    t.string "c_id"
+    t.string "s_id"
+    t.string "expiry"
+    t.boolean "admin"
+    t.boolean "legacy"
+    t.string "password_reset_token"
+    t.datetime "password_reset_sent_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
