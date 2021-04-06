@@ -83,47 +83,49 @@ puts 'start'
 
       categorization = Categorization.find_by(name: cc[:categorization])
       array = cc[:body].split(/\n+/)
+      downcase_title = cc[:title].downcase
+      
         # puts cc[:title]
-      if cc[:title].match(/Roz/)
-        # puts cc[:title]
-        cc[:categorization] = "Opinion"
-        cc[:subcategorization] = "Columnists"
-      end
-      if cc[:title].match(/Cooking/)
+      if downcase_title.match(/roz/)
         # puts cc[:title]
         cc[:categorization] = "Opinion"
         cc[:subcategorization] = "Columnists"
       end
-      if cc[:title].match(/seniors/)
+      if downcase_title.match(/cooking/)
+        # puts cc[:title]
+        cc[:categorization] = "Opinion"
+        cc[:subcategorization] = "Columnists"
+      end
+      if downcase_title.match(/seniors/)
         # puts cc[:title]
           cc[:categorization] = "Community"
           cc[:subcategorization] = "Profile"
       end
-      if cc[:title].match(/Highlights/)
+      if downcase_title.match(/highlights/)
         # puts cc[:title]
       end
-      if cc[:title].match(/Author profile/)
+      if downcase_title.match(/author profile/)
         # puts cc[:title]
           cc[:categorization] = "Community"
           cc[:subcategorization] = "Profile"
       end
-      if cc[:title].match(/Horoscopes/)
+      if downcase_title.match(/horoscopes/)
         # puts cc[:title]
         cc[:categorization] = "Opinion"
         cc[:subcategorization] = "Columnists"
       end
-      if cc[:title].match(/to the editor/)
+      if downcase_title.match(/to the editor/)
         # puts cc[:title]
         cc[:categorization] = "Opinion"
         cc[:subcategorization] = "Letters"
       end
-      if cc[:title].match(/From the editor's desk/)
+      if downcase_title.match(/from the editor's desk/)
         # puts cc[:title]
         cc[:categorization] = "Opinion"
         cc[:subcategorization] = "Columnists"
       end
-      if cc[:title].match(/On the Bookshelf/)
-        # puts cc[:title]
+      if downcase_title.match(/on the bookshelf/)
+        puts cc[:title]
         cc[:categorization] = "The Arts"
         cc[:subcategorization] = "On The Bookshelf"
       end
@@ -194,58 +196,58 @@ puts "#{art.url}"
   # sub_cat = nil
   categorization = Categorization.find_by(name: cc[:categorization])
   array = cc[:body].split(/\n+/)
-
-    if cc[:title].match(/Roz/)
+  downcase_title = cc[:title].downcase
+    if downcase_title.match(/roz/)
       # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
-    if cc[:title].match(/Cooking/)
+    if downcase_title.match(/cooking/)
       # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
-    if cc[:title].match(/seniors/)
+    if downcase_title.match(/seniors/)
       # puts cc[:title]
         cc[:categorization] = "Community"
         cc[:subcategorization] = "Profile"
     end
-    if cc[:title].match(/neighbour:/)
+    if downcase_title.match(/neighbour:/)
       # puts cc[:title]
         cc[:categorization] = "Community"
         cc[:subcategorization] = "Profile"
     end
-    if cc[:title].match(/Music Row/)
+    if downcase_title.match(/Music Row/)
       # puts cc[:title]
       cc[:categorization] = "The Arts"
       cc[:subcategorization] = "Music Row"
     end
-    if cc[:title].match(/Author profile/)
+    if downcase_title.match(/author profile/)
       # puts cc[:title]
         cc[:categorization] = "Community"
         cc[:subcategorization] = "Profile"
     end
-    if cc[:title].match(/Horoscopes/)
+    if downcase_title.match(/horoscopes/)
       # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
-    if cc[:title].match(/to the editor/)
+    if downcase_title.match(/to the editor/)
       # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Letters"
     end
-    if cc[:title].match(/From the editor's desk/)
+    if downcase_title.match(/from the editor's desk/)
       # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
-    if cc[:title].match(/On the Bookshelf/)
+    if downcase_title.match(/on the bookshelf/)
       # puts cc[:title]
       cc[:categorization] = "The Arts"
       cc[:subcategorization] = "On The Bookshelf"
     end
-if cc[:title].match(/Letter/)
+if downcase_title.match(/letter/)
   # puts cc[:title]
   cc[:categorization] = "Opinion"
   cc[:subcategorization] = "Letters"
@@ -311,58 +313,59 @@ three.each do |cc|
   # sub_cat = nil
   categorization = Categorization.find_by(name: cc[:categorization])
   array = cc[:body].split(/\n+/)
+  downcase_title = cc[:title].downcase
 
-   if cc[:title].match(/Roz/)
+   if downcase_title.match(/roz /)
       # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
-    if cc[:title].match(/Cooking/)
+    if downcase_title.match(/cooking/)
       # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
-    if cc[:title].match(/seniors/)
+    if downcase_title.match(/seniors/)
       # puts cc[:title]
         cc[:categorization] = "Community"
         cc[:subcategorization] = "Profile"
     end
-    if cc[:title].match(/neighbour:/)
+    if downcase_title.match(/neighbour:/)
       # puts cc[:title]
         cc[:categorization] = "Community"
         cc[:subcategorization] = "Profile"
     end
-    if cc[:title].match(/Music Row/)
+    if downcase_title.match(/music row/)
       # puts cc[:title]
       cc[:categorization] = "The Arts"
       cc[:subcategorization] = "Music Row"
     end
-    if cc[:title].match(/Author profile/)
+    if downcase_title.match(/author profile/)
       # puts cc[:title]
         cc[:categorization] = "Community"
         cc[:subcategorization] = "Profile"
     end
-    if cc[:title].match(/Horoscopes/)
+    if downcase_title.match(/horoscopes/)
       # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
-    if cc[:title].match(/Letter/)
+    if downcase_title.match(/letter/)
   # puts cc[:title]
   cc[:categorization] = "Opinion"
   cc[:subcategorization] = "Letters"
 end
-    if cc[:title].match(/to the editor/)
+    if downcase_title.match(/to the editor/)
       # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Letters"
     end
-    if cc[:title].match(/From the editor/)
+    if downcase_title.match(/from the editor/)
       # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
-    if cc[:title].match(/On the Bookshelf/)
+    if downcase_title.match(/on the bookshelf/)
       # puts cc[:title]
       cc[:categorization] = "The Arts"
       cc[:subcategorization] = "On The Bookshelf"
@@ -428,58 +431,58 @@ four.each do |cc|
   # sub_cat = nil
   categorization = Categorization.find_by(name: cc[:categorization])
   array = cc[:body].split(/\n+/)
-
-   if cc[:title].match(/Roz/)
+  downcase_title = cc[:title].downcase
+   if downcase_title.match(/roz /)
       # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
-    if cc[:title].match(/Cooking/)
+    if downcase_title.match(/cooking with/)
       # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
-    if cc[:title].match(/seniors/)
+    if downcase_title.match(/seniors/)
       # puts cc[:title]
         cc[:categorization] = "Community"
         cc[:subcategorization] = "Profile"
     end
-    if cc[:title].match(/neighbour:/)
+    if downcase_title.match(/neighbour:/)
       # puts cc[:title]
         cc[:categorization] = "Community"
         cc[:subcategorization] = "Profile"
     end
-    if cc[:title].match(/Music Row/)
+    if downcase_title.match(/music Row/)
       # puts cc[:title]
       cc[:categorization] = "The Arts"
       cc[:subcategorization] = "Music Row"
     end
-    if cc[:title].match(/Author profile/)
+    if downcase_title.match(/author profile/)
       # puts cc[:title]
         cc[:categorization] = "Community"
         cc[:subcategorization] = "Profile"
     end
-    if cc[:title].match(/Horoscopes/)
+    if downcase_title.match(/horoscopes/)
       # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
-    if cc[:title].match(/Letter/)
+    if downcase_title.match(/letter/)
   # puts cc[:title]
   cc[:categorization] = "Opinion"
   cc[:subcategorization] = "Letters"
 end
-    if cc[:title].match(/to the editor/)
+    if downcase_title.match(/to the editor/)
       # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Letters"
     end
-    if cc[:title].match(/From the editor/)
+    if downcase_title.match(/from the editor/)
       # puts cc[:title]
       cc[:categorization] = "Opinion"
       cc[:subcategorization] = "Columnists"
     end
-    if cc[:title].match(/On the Bookshelf/)
+    if downcase_title.match(/on the bookshelf/)
       # puts cc[:title]
       cc[:categorization] = "The Arts"
       cc[:subcategorization] = "On The Bookshelf"

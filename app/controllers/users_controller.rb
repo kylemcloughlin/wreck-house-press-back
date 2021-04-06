@@ -92,7 +92,7 @@ end
 
 
   def reset
-    byebug
+    # byebug
     user = User.find_by(password_reset_token: params[:token])
     if user.present? && user.password_token_valid?
       if user.reset_password(params[:password])

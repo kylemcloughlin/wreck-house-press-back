@@ -22,7 +22,7 @@ class SubcategorizationsController < ApplicationController
   def show
 
  categorization = Categorization.find(@subcategorization.categorization_id)
-
+  # byebug
     render json: { header: @subcategorization[:name], articles: @subcategorization.articles.order(id: :desc), subcategorizations: categorization.subcategorizations.order(id: :desc)  }
   end
 

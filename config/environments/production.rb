@@ -4,7 +4,9 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  config.action_mailer.default_url_options = {host: 'wreck-house-press-back.herokuapp.com'}
+
+  
+  config.action_mailer.default_url_options = {host: 'https://wreck-house-press-back.herokuapp.com'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
    :address              => 'smtp.gmail.com',
