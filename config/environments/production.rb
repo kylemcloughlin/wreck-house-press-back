@@ -14,7 +14,7 @@ Rails.application.configure do
       :domain               => 'wreckhousepress.com',
       :user_name            => ENV['USER_NAME'],
       :password             => ENV['EMAIL_PASS'],
-      :authentication       => :login,
+      :authentication       => 'login',
 
   }
 
