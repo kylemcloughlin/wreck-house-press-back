@@ -6,7 +6,7 @@ Rails.application.configure do
 
 
   
-  config.action_mailer.default_url_options = {host: 'https://wreck-house-press-back.herokuapp.com'}
+  config.action_mailer.default_url_options = {host: 'wreck-house-press-back.herokuapp.com', protocol: 'https'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
    :address              => 'smtp.gmail.com',
@@ -14,7 +14,7 @@ Rails.application.configure do
       :domain               => 'wreckhousepress.com',
       :user_name            => ENV['USER_NAME'],
       :password             => ENV['EMAIL_PASS'],
-      :authentication       => 'login',
+      :authentication       => :login,
 
   }
 
