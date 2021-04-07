@@ -23,3 +23,4 @@ class ContactMailer < ApplicationMailer
        bcc: ["kylemcloughlin00@gmail.com"])
 end
 end
+

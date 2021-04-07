@@ -39,6 +39,8 @@ class ArticlesController < ApplicationController
     end
     # byebug
     
+    #date
+date = Date.today
     @article = Article.new({
       title: input[:title],
       subtitles: input[:subtitles],
@@ -48,7 +50,7 @@ class ArticlesController < ApplicationController
       photos: input[:photos],
       fallback: input[:photos],
       rt: input[:rt],
-      originalPost: '03/30/2021',
+      originalPost: date.strftime("%d/%m/%Y"),
       legacy: false,
       categorization: category,
       subcategorization: subcategory,

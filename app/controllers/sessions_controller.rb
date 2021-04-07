@@ -23,7 +23,7 @@ end
     user_id = payload["user_id"]
    
     @user = User.find(user_id)
-    render json: { logged_in: true, id: @user.id, sId: @user.s_id,legacy: @user.legacy, expiry: @user.expiry,}
+    render json: { logged_in: true, id: @user.id, expiry: @user.expiry}
   rescue => exception
     render json: {message: "Error! #{exception}"}, status: :forbidden
   end

@@ -22,34 +22,35 @@ four = get_seed_four
 
 opts = [{
   name: "Annual Digital",
-  period: "60 Every Year",
+  period: "60 Dollars Yearly",
   validUntil: "",
   dis: "A year of content from the Wreckhouse Weekly Print edition",
   includes: "Automatically entered into all contest & promotions",
   foot: "Billed Anually. Taxes extra",
   cost: 60,
-  stripe: "price_1IYJ2cHPabCG8MNSGty3kbpf"
+  stripe: "price_1IdJb8Ei5f8mP2W3RUMUgJyy"
 }, {
   name: "6-Month Digital",
-  period: "5 Every Month",
+  period: "5 Dollars Monthly",
   validUntil: "6 months",
   dis: "All content from the Wreckhouse Weekly print edition",
   includes: "Automatically entered into all contest & promotions",
   foot: "Billed Anually. Taxes extra",
   cost: 5,
-   stripe: "price_1IYJ2cHPabCG8MNSGty3kbpf"
+   stripe: "price_1IdJgTEi5f8mP2W3h9FzZ7E1"
 },
  {
   name: "3-Month Digital",
-  period: "5 Every Month",
+  period: "5 Dollars Monthly",
   dis: "All content from the Wreckhouse Weekly print edition.",
   validUntil: "3 months",
   includes: "Automatically entered into all contest & promotions",
   foot: "Billed Anually. Taxes extra",
   cost: 5,
-   stripe: "price_1IYJ0wHPabCG8MNS8Uj8BvGy"
+   stripe: "price_1IdJiGEi5f8mP2W3kFs2heAx"
 
 }]
+
 opts.each do |opt|
   Subscription.create(opt)
 end
@@ -545,7 +546,28 @@ puts "#{art.url}"
 end
     
     
-    
+  legacy  = [{
+    email: 'kylemcloughlin00@gmail.com',
+    expiry: '04/04/2022',
+    token: nil    
+  },{
+    email: 'kylemcloughlindev@gmail.com',
+    expiry: "04/04/2020",
+    token: nil
+  },{
+    email: 'wreckhousepressutility@gmail.com',
+    expiry: "annual",
+    token: nil
+  }]    
+
+  legacy.each do |cc|
+      RawUser.create!(cc)
+  
+  end
+
+
+
+
     puts 'done'
     
    

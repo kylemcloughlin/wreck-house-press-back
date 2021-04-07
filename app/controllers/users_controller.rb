@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   require "stripe"
-  Stripe.api_key= ENV["API_KEY"]
+  Stripe.api_key=  ENV["API_KEY"]
 # ENV["API_KEY"]
   before_action :set_user, only: [:show, :update, :destroy]
 
@@ -10,11 +10,10 @@ class UsersController < ApplicationController
     @user = User.create!(
       email: params['user']['email'],
       password: params['user']['password'],
-      legacy: true,
-      expiry: '"2021-01-22"',
       password_confirmation: params['user']['password_confirmation'],
       c_id: nil,
-      admin: false
+      admin: false,
+      legacy: false
     )
     if @user
       payload = {user_id: @user.id}

@@ -1,25 +1,25 @@
 class NotifierMailer < ApplicationMailer
   default from:  "Wreckhouse Team <no-reply@wreckhousepress.com>"
       #   return_path: "system@example.com"
-
-
-
-
-
-def welcome
-email = params[:email]
-mail(to: "#{email}",
-      subject: 'Welcome to WreckHouse Press')
+      
+      
+      
+      
+      def welcome
+       email = params[:email]
+       mail(to: "#{email}",
+              subject: 'Welcome to WreckHouse Press',
+              content_type: "text/html")
 end
 
 def rescue(user) 
-    puts params
     @user = user
     
 #     byebug
 #   email = user.email
 mail(to: @user.email,
-       subject: "New Password Confirmation")
+       subject: "New Password Confirmation",
+              content_type: "text/html")
 end
 
 def checkout
@@ -32,7 +32,16 @@ email = params[:email]
 @date = params[:data][:end]
 
 mail(to: "#{email}",
-       subject: "Payment Confirmation - invoice #{@invoice_number}")
+       subject: "Payment Confirmation - invoice #{@invoice_number}",
+      content_type: "text/html")
+      
+end
+def legacy(raw_user) 
+       @raw_user = raw_user
+       mail(to: @raw_user.email,
+              subject: "Wreckhouse Press's New Website and user update",
+              content_type: "text/html")
+
 end
 
 end

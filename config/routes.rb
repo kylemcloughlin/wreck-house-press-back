@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # resources :raw_users
+  get :fire, to: "raw_users#index"
+  post :legacy, to: "raw_users#create"
   resources :subscriptions
   resources :users
   resources :sessions
