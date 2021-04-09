@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
   require "stripe"
-  # Stripe.api_key= ENV["API_KEY"]
-  Stripe.api_key =  ENV["API_KEY"]
+  Stripe.api_key= ENV["API_KEY"]
+  # Stripe.api_key =  '
 
   def create
     begin
@@ -28,7 +28,7 @@ class CustomersController < ApplicationController
       user_id = payload["user_id"]
       user = User.find(user_id)
       subcription = nil
-      if params[:code] === "price_1IdJgTEi5f8mP2W3h9FzZ7E1"
+      if params[:code] === "price_1IdzVwFLIGg7N7ZVCNQJ4sQE" 
         date = Date.today + 6.months
         subcription = Stripe::Subscription.create({
           customer: customer.id,
@@ -40,7 +40,7 @@ class CustomersController < ApplicationController
           expand: ["latest_invoice.payment_intent"],
         })
         user[:expiry] = date.strftime("%d/%m/%Y")
-      elsif params[:code] === "price_1IdJiGEi5f8mP2W3kFs2heAx"
+      elsif params[:code] === "price_1IdzXrFLIGg7N7ZVPujKXYay"
         date = Date.today + 3.months
         subcription = Stripe::Subscription.create({
           customer: customer.id,

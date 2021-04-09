@@ -39,7 +39,7 @@ end
 def legacy(raw_user) 
        @raw_user = raw_user
        mail(to: @raw_user.email,
-              subject: "Wreckhouse Press's New Website and user update",
+              subject: "Wreckhouse Press's New Website and Account Update",
               content_type: "text/html")
 
 end

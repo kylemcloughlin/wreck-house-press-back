@@ -28,7 +28,7 @@ opts = [{
   includes: "Automatically entered into all contest & promotions",
   foot: "Billed Anually. Taxes extra",
   cost: 60,
-  stripe: "price_1IdJb8Ei5f8mP2W3RUMUgJyy"
+  stripe: "price_1IdzU5FLIGg7N7ZVvr1o4zaB"
 }, {
   name: "6-Month Digital",
   period: "5 Dollars Monthly",
@@ -37,7 +37,7 @@ opts = [{
   includes: "Automatically entered into all contest & promotions",
   foot: "Billed Anually. Taxes extra",
   cost: 5,
-   stripe: "price_1IdJgTEi5f8mP2W3h9FzZ7E1"
+   stripe: "price_1IdzVwFLIGg7N7ZVCNQJ4sQE"
 },
  {
   name: "3-Month Digital",
@@ -47,9 +47,10 @@ opts = [{
   includes: "Automatically entered into all contest & promotions",
   foot: "Billed Anually. Taxes extra",
   cost: 5,
-   stripe: "price_1IdJiGEi5f8mP2W3kFs2heAx"
+   stripe: "price_1IdzXrFLIGg7N7ZVPujKXYay"
 
 }]
+
 
 opts.each do |opt|
   Subscription.create(opt)

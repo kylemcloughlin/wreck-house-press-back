@@ -1,5 +1,5 @@
 class ContactMailer < ApplicationMailer
-  default from: "Wreckhouse Team <no-reply@wreckhousepress.com>"
+  default from: "Wreckhouse Press <no-reply@wreckhousepress.com>"
   def send_about_email
       @email = params[:email]
      @email_body = params[:email_body]

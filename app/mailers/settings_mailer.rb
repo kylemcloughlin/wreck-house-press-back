@@ -1,5 +1,5 @@
 class SettingsMailer < ApplicationMailer
-  default from: "Wreckhouse Team <no-reply@wreckhousepress.com>"
+  default from: "Wreckhouse Press <no-reply@wreckhousepress.com>"
 
   def password
     email = params[:email]
