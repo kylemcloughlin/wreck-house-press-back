@@ -1,4 +1,4 @@
-users = [{
+$users = [{
   name: "Claudia Lawrence",
   email: "claudialawrence@nf.sympatico.ca",
   subscription_type: "3-Month Digital",
@@ -185,9 +185,7 @@ users = [{
   subscription_type: "Annual Digital 60",
   start_date: "2021-08-26",
   expiry_date: "annual",
-}]
-
-users2 = [
+},
   {
               name: "madjack7691@gmail.com",
               email: "madjack7691@gmail.com",
@@ -414,30 +412,7 @@ users2 = [
   }
 ]
 
-users.each do |x|
-  expiry = nil  
-  if x[:expiry_date]
-    xp = x[:expiry_date]
-   
-    if xp == 'annual'
-      expiry = xp
 
-    else
-      puts 'hit'
-       xp=  xp.split("/")
-    
-       expiry = [xp[2], xp[1], xp[0]]
-       expiry = expiry.join("/")
-        puts expiry
-    end
-  
-  end
+def get_users
+$users
 end
-
-# users2.each do |x|
-#   puts x[:email]
-#   puts x[:expiry_date]
-#   if x[:expiry_date]
-#     puts "hit"
-#   end
-# end

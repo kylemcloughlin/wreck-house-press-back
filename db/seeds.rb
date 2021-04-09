@@ -2,7 +2,7 @@ require_relative 'seed_data.rb'
 require_relative 'seed_data_two.rb'
 require_relative "seed_data_three.rb"
 require_relative "seed_data_four.rb"
-# require_relative 'file1.rb'
+require_relative 'user_seed.rb'
 
 @articles = Article.destroy_all
 @Subcategorization = Subcategorization.destroy_all
@@ -18,6 +18,38 @@ one = get_seed_one
 two = get_seed_two
 three = get_seed_three
 four = get_seed_four
+users =  get_users
+
+
+users.each do |x|
+  expiry = nil
+  if x[:expiry_date]
+    xp = x[:expiry_date]
+
+    if xp == "annual"
+      expiry = xp
+    else
+      puts "hit"
+      xp = xp.split("/")
+
+      expiry = [xp[2], xp[1], xp[0]]
+      expiry = expiry.join("/")
+      puts expiry
+    end
+ raw = RawUser.create!({
+      email: x[:email],
+      expiry: expiry,
+      token: nil,
+
+    })
+  
+    puts raw
+  
+  end
+end
+
+
+
 
 
 opts = [{
@@ -547,24 +579,7 @@ puts "#{art.url}"
 end
     
     
-  legacy  = [{
-    email: 'kylemcloughlin00@gmail.com',
-    expiry: '04/04/2022',
-    token: nil    
-  },{
-    email: 'kylemcloughlindev@gmail.com',
-    expiry: "04/04/2020",
-    token: nil
-  },{
-    email: 'wreckhousepressutility@gmail.com',
-    expiry: "annual",
-    token: nil
-  }]    
-
-  legacy.each do |cc|
-      RawUser.create!(cc)
-  
-  end
+ 
 
 
 
