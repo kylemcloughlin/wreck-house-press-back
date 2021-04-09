@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
   require "stripe"
   Stripe.api_key= ENV["API_KEY"]
-  # Stripe.api_key =  '
+
 
   def create
     begin
