@@ -15,7 +15,6 @@ end
 def rescue(user) 
     @user = user
     
-#     byebug
 #   email = user.email
 mail(to: @user.email,
        subject: "New Password Confirmation",

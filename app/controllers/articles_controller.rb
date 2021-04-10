@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   def show
-  # byebug
+  
     render json: @article
   end
 
@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
     else
       subcategory = nil
     end
-    # byebug
+ 
     
     #date
 date = Date.today
@@ -80,7 +80,6 @@ date = Date.today
 
   # Use callbacks to share common setup or constraints between actions.
   def set_article
-    # byebug
     @article = Article.find_by(url: params[:id])
   end
 

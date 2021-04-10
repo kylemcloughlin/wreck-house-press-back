@@ -7,13 +7,16 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
+      admin =  false
+
     @user = User.create!(
       email: params['user']['email'],
       password: params['user']['password'],
       password_confirmation: params['user']['password_confirmation'],
       c_id: nil,
-      admin: false,
-      legacy: false
+      admin: admin,
+      legacy: false,
+    
     )
     if @user
       payload = {user_id: @user.id}
@@ -91,7 +94,6 @@ end
 
 
   def reset
-    # byebug
     user = User.find_by(password_reset_token: params[:token])
     if user.present? && user.password_token_valid?
       if user.reset_password(params[:password])

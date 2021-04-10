@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
   require "stripe"
   Stripe.api_key= ENV["API_KEY"]
-
+  # Stripe.api_key =  '
 
   def create
     begin
@@ -63,7 +63,6 @@ class CustomersController < ApplicationController
         })
         user[:expiry] = 'annual'
       end
-      # byebug
       user[:c_id] = customer.id
       user[:s_id] = subcription.id
     
@@ -89,21 +88,21 @@ class CustomersController < ApplicationController
       # puts "Decline code is: #{e.error.decline_code}" if e.error.decline_code
       # puts "Param is: #{e.error.param}" if e.error.param
       # puts "Message is: #{e.error.message}" if e.error.message
-      # byebug
       render json: e.error.message, status: e.http_status
     end
   end
 
   def destroy
     @User = User.find_by(email: params[:data][:email]).try(:authenticate, params[:data][:password])
-    if !@User
-      render render json: @User, status: 401
-    else
+    # if !@User
+    #   render render json: @User, status: 401
+    # else
       if @User.legacy
         @User.expiry = nil
         SettingsMailer.with({ email: @User.email }).notify_cancel.deliver_now
-      end
-      if @User.s_id
+        render json: { user: @User }, status: :ok
+  
+    elsif @User.s_id
         begin
           suscription = Stripe::Subscription.delete(@User.s_id) # might be redundant to have this delete user
 
@@ -118,10 +117,10 @@ class CustomersController < ApplicationController
         rescue exception => e
           render json: e, status: 401
         end
-      else
+    else
         render json: e, status: 404
       end
-    end
+    # end
   end
 
   private

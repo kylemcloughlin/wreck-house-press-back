@@ -14,7 +14,6 @@ class ContactController < ApplicationController
       ContactMailer.with({email: email, email_body: email_body}).send_about_email.deliver_now
     render status: 200
     end
-    # byebug
   end
 
 

@@ -4,7 +4,6 @@ class RawUser < ApplicationRecord
     self[:token] = generate_base64_token
     # self.password_reset_sent_at = Time.zone.now
     save!
-    # byebug
     NotifierMailer.legacy(self).deliver_now
   end
 

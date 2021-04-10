@@ -43,7 +43,6 @@ puts'index'
     # Use callbacks to share common setup or constraints between actions.
     def set_categorization
       puts params
-      # byebug
       @categorization = Categorization.find_by(name: params[:name])
     end
 
