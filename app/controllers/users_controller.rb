@@ -7,14 +7,13 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-      admin =  false
 
     @user = User.create!(
       email: params['user']['email'],
       password: params['user']['password'],
       password_confirmation: params['user']['password_confirmation'],
       c_id: nil,
-      admin: admin,
+      admin: false,
       legacy: false,
     
     )
