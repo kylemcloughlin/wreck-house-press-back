@@ -3396,7 +3396,7 @@ Peggy has already seen a positive change in her son. She says has become much ha
   originalPost: "09/28/2020",
   subcategorization: nil,
 },{
-  title: "Outfitters’ struggles impact region",
+  title: "Outfitters struggles impact region",
   categorization: "Local News",
   photos: ["https://static.wixstatic.com/media/3f4fd9_26658d0d22c045d3b8d200e074bb3426~mv2.jpg/v1/fill/w_740,h_555,al_c,q_90,usm_0.66_1.00_0.01/3f4fd9_26658d0d22c045d3b8d200e074bb3426~mv2.webp"],
   subtitles: "Arthur and Debbie Ryan of Mountain Top Outfitters are among the tourism businesses hit hard by COVID-19. - © Rosalyn Roy",
