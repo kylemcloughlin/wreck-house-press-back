@@ -1,4 +1,4 @@
-$last_articles = [
+$articles_last_of_them = [
   {
     title: "Storms show lack of emergency prep",
     categorization: "Top Story",
@@ -2440,5 +2440,5 @@ The Jays may be tested early by injuries, but this is a young core ready to take
 
 
 def get_seed_four
-  $last_articles
+  $articles_last_of_them
 end
