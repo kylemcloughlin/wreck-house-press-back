@@ -1,4 +1,4 @@
-$articles = [
+$last_articles = [
   {
     title: "Storms show lack of emergency prep",
     categorization: "Top Story",
@@ -895,10 +895,7 @@ Nate Pearson, Toronto’s prized pitching prospect, was a hopeful to join this y
 
 When asked about the rotation, Blue Jays President Mark Shapiro acknowledged this is their “area of least experience” and they don’t expect the Jays will be a perfect team this year. He said they will adjust as they go, but he is building toward an era of a championship calibre team.
 
-Patience for the short term. Better times ahead. Something we can all identify with.
-
-
-Lori Bennett is a social worker, policy professional, recreation softball player and coach, and new ukulele-ist. A Newfoundlander living in Toronto, Lori loves a good hockey chat or even a debate, just as long as it remains respectful. She posts her gametime thoughts on twitter, particularly about hockey and the Montreal Canadiens, as @lori10habs. ",
+Patience for the short term. Better times ahead. Something we can all identify with.",
     rt: "4",
       legacy: true,
     author: "Lori Bennett",
@@ -1438,10 +1435,7 @@ The Toronto Blue Jays open their season on April 1st against the New York Yankee
 The starting pitching rotation will continue to be a story for the Jays until they are able make a trade, perhaps using chips from their crowded outfield. A best guess for starters is Hyun Jin Ryu as the ace, followed by Robbie Ray, Tanner Roark and Steven Matz. If healthy, Pearson will also be a starter. 
 
 
-Spring is finally here folks. You’re probably excited enough to wet your plants. 
-
-
-Lori Bennett is a social worker, policy professional, recreation softball player and coach, and new ukulele-ist. A Newfoundlander living in Toronto, Lori loves a good hockey chat or even a debate, just as long as it remains respectful. She posts her gametime thoughts on twitter, particularly about hockey and the Montreal Canadiens, as @lori10habs. ",
+Spring is finally here folks. You’re probably excited enough to wet your plants. ",
     rt: "5",
       legacy: true,
     author: "",
@@ -1948,10 +1942,7 @@ Three other positions look fairly secure. The catcher of the day, whether Danny 
 
 That leaves a collection of decent hitters to bat third, sixth, seventh and eighth, and they will be determined each game based on who is pitching, who needs a rest and how they play the field that day. Rowdy Tellez, Lourdes Gurriel Jr., Marcus Semien, Cavan Biggio and Randal Grichuk will fill in the gaps in the batting order. 
 
-If the Jays struggle, it won’t be because of a weak batting order. Batter up!
-
-
-Lori Bennett is a social worker, policy professional, recreation softball player and coach, and new ukulele-ist. A Newfoundlander living in Toronto, Lori loves a good hockey chat or even a debate, just as long as it remains respectful. She posts her gametime thoughts on twitter, particularly about hockey and the Montreal Canadiens, as @lori10habs. ",
+If the Jays struggle, it won’t be because of a weak batting order. Batter up!",
     rt: "",
       legacy: true,
     author: "Lori Bennett",
@@ -2435,10 +2426,7 @@ The Toronto Blue Jays opened their season with a series against the New York Yan
 
 We have learned some things from the NHL adapting a baseball-style schedule for this season. It’s a good idea to not get too high or too low based on one series. In baseball, we wait for a few teams to come and go before we have a real sense of how our team matches up.
 
-The Jays may be tested early by injuries, but this is a young core ready to take the next step. As baseball icon Yogi Berra once said, “Baseball is ninety percent mental. The other half is physical.”
-
-
-Lori Bennett is a social worker, policy professional, recreation softball player and coach, and new ukulele-ist. A Newfoundlander living in Toronto, Lori loves a good hockey chat or even a debate, just as long as it remains respectful. She posts her gametime thoughts on twitter, particularly about hockey and the Montreal Canadiens, as @lori10habs. ",
+The Jays may be tested early by injuries, but this is a young core ready to take the next step. As baseball icon Yogi Berra once said, “Baseball is ninety percent mental. The other half is physical.”",
     rt: "4",
       legacy: true,
     author: "Lori Bennett",
@@ -2452,5 +2440,5 @@ Lori Bennett is a social worker, policy professional, recreation softball player
 
 
 def get_seed_four
-  $articles
+  $last_articles
 end

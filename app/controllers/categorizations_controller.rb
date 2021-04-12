@@ -12,7 +12,10 @@ puts'index'
   # GET /categorizations/1
   def show
     puts params
-    render json: { header: @categorization[:name], articles: @categorization.articles.order(id: :desc), subcategorizations: @categorization.subcategorizations.order(id: :desc)}
+    articles = @categorization.articles.order(id: :desc)
+    now = Time.zone.now.strftime("%Y-%m-%dT%H:%M:%S")
+    art = articles.where("publish_time < ?", now).or(articles.where(publish_time: nil))
+    render json: { header: @categorization[:name], articles: art, subcategorizations: @categorization.subcategorizations.order(id: :desc)}
   end
 
   # POST /categorizations

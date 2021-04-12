@@ -126,12 +126,6 @@ $users = [{
   start_date: "2020-10-14",
   expiry_date: "2021/04/14",
 }, {
-  name: "Claudia Lawrence",
-  email: "claudialawrence@nf.sympatico.ca",
-  subscription_type: "6 Month Digital",
-  start_date: "2020-09-29",
-  expiry_date: "2021/03/29",
-}, {
   name: "",
   email: "donnaelms@hotmail.com",
   subscription_type: "3 Month Digital",
@@ -413,10 +407,10 @@ $users = [{
 ]
 
 
-def get_users
-$users
-end
+# def get_users
+# $users
+# end
 
 
 
-
+puts $users.length

@@ -27,7 +27,7 @@ module WreckHousePressBack
 # config.middleware.use config.session_store, config.session_options
 
 
-
+config.time_zone = "Eastern Time (US & Canada)"
   # config.middleware.use ActionDispatch::Session::ActiveRecordStore
      
      

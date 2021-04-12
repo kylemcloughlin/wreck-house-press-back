@@ -598,13 +598,7 @@ The MLB season is scheduled to begin on April 1st, but all things are tentative 
 There will be new faces when the Jays take the field in the Spring. Along with the new, there will also be some improved faces. Fans following Vladimir Guerrero Jr. on Instagram have watched his offseason transformation as the young star has been getting his fit on.
 
 
-In our dreams an agile 3rd baseman is snagging balls in Toronto, and a trip to see a live game is still part of the summer’s itinerary.
-
-
-
-
-Lori Bennett is a social worker, policy professional, recreation softball player and coach, and new ukulele-ist. A Newfoundlander living in Toronto, Lori loves a good hockey chat or even a debate, just as long as it remains respectful. She posts her game time thoughts on twitter, particularly for hockey and the Montreal Canadiens,
- as @lori10habs. ",
+In our dreams an agile 3rd baseman is snagging balls in Toronto, and a trip to see a live game is still part of the summer’s itinerary. ",
   legacy: true,
   author: "Rosalyn Roy Staff Reporter",
   originalPost: "01/11/2021",
@@ -1171,12 +1165,7 @@ A final note from the diamond – Tommy Lasorda passed away on Jan. 7th. Lasorda
 A prolific manager, a Hall of Famer (1997), and an Olympic Gold Medalist (2000 Summer Olympics), Lasorda is probably best known for his colorful quotes and sayings. I’ll leave you with one.
 
 
-“About the only problem with success is that it does not teach you how to deal with failure.” ~ Tommy Lasorda (1927-2021).
-
-
-
-
-Lori Bennett is a social worker, policy professional, recreation softball player and coach, and new ukulele-ist. A Newfoundlander living in Toronto, Lori loves a good hockey chat or even a debate, just as long as it remains respectful. She posts her gametime thoughts on twitter, in particular about hockey and the Montreal Canadiens, as @lori10habs. ",
+“About the only problem with success is that it does not teach you how to deal with failure.” ~ Tommy Lasorda (1927-2021).",
   legacy: true,
   author: "Rosalyn Roy Staff Reporter",
   originalPost: "01/18/2021",
@@ -2088,10 +2077,7 @@ The road to the Super Bowl is clearly mapped out with NFL Conference Championshi
 In the NFC the storyline is Tom Brady, wearing Buccaneers Red instead of Patriots Blue, going up against another elite quarterback, Aaron Rodgers. The QB duel for the AFC Championship was undetermined at press deadline. The question lies in whether Kansas City’s Patrick Mahomes will clear concussion protocol, or if the Bills’ Josh Allen will face a back up. 
 
 
-By the time you’re reading this, you’ll know who is meeting on February 7th for Super Bowl LV, and this seems like as good a time as any to remind local grocers to load up on wings. 
-
-
-Lori Bennett is a social worker, policy professional, recreation softball player and coach, and new ukulele-ist. A Newfoundlander living in Toronto, Lori loves a good hockey chat or even a debate, just as long as it remains respectful. She posts her gametime thoughts on twitter, in particular about hockey and the Montreal Canadiens, as @lori10habs. ",
+By the time you’re reading this, you’ll know who is meeting on February 7th for Super Bowl LV, and this seems like as good a time as any to remind local grocers to load up on wings. ",
   legacy: true,
   author: "Lori Bennett",
   originalPost: "01/25/2021",
@@ -3251,10 +3237,7 @@ It’s probably poor form to say so in a sports column, but my favourite part of
 Let me introduce you to Valerie Bertinelli’s Potato Skins with Beer Cheese. Easy, delicious, and you can find them in the Google machine.
 
 
-You’re welcome.  
-
-
-Lori Bennett is a social worker, policy professional, recreation softball player and coach, and new ukulele-ist. A Newfoundlander living in Toronto, Lori loves a good hockey chat or even a debate, just as long as it remains respectful. She posts her gametime thoughts on twitter, particularly for hockey and the Montreal Canadiens, as @lori10habs. ",
+You’re welcome.",
       legacy: true,
       author: "Lori Bennett",
       originalPost: "02/01/2021",
@@ -4228,10 +4211,7 @@ Blue Jays Babble
 The Toronto Blue Jays are due to open spring training on February 18th. Dunedin, Florida is the home of their spring training facility and players are gradually making their way there. Significant questions remain about where they will begin their regular season. With the Canadian border closed to international travel, it is doubtful the Jays will be able to play their home games in Toronto.
 
 
-Funny isn’t it? The Jays want to stay home and the rest of us are scratching to get out.
-
-
-Lori Bennett is a social worker, policy professional, recreation softball player and coach, and new ukulele-ist. A Newfoundlander living in Toronto, Lori loves a good hockey chat or even a debate, just as long as it remains respectful. She posts her gametime thoughts on twitter, particularly for hockey and the Montreal Canadiens, as @lori10habs. ",
+Funny isn’t it? The Jays want to stay home and the rest of us are scratching to get out.",
       legacy: true,
       author: "Lori Bennett",
       originalPost: "02/15/2021",
@@ -4770,10 +4750,7 @@ The rivalry has been renewed this season due to a little front-office drama. Ron
 
 Raptors Racket
 
-With the calendar winding down to the March 25th trade deadline, the NBA rumour mill is heating up. Last week, a rumour circulated that the Raptors were working on a trade that would bring in Andre Drummond from the Cleveland Cavaliers. The Raptors are currently sitting in 7th place in the Eastern conference, which would qualify them for the NBA play-in process between the 7th to 10th place teams in each conference. Not exactly a sure bet, but can management ignore the holes on this team and hope for the best? Stay tuned.
-
-
-Lori Bennett is a social worker, policy professional, recreation softball player and coach, and new ukulele-ist. A Newfoundlander living in Toronto, Lori loves a good hockey chat or even a debate, just as long as it remains respectful. She posts her gametime thoughts on twitter, particularly for hockey and the Montreal Canadiens, as @lori10habs. ",
+With the calendar winding down to the March 25th trade deadline, the NBA rumour mill is heating up. Last week, a rumour circulated that the Raptors were working on a trade that would bring in Andre Drummond from the Cleveland Cavaliers. The Raptors are currently sitting in 7th place in the Eastern conference, which would qualify them for the NBA play-in process between the 7th to 10th place teams in each conference. Not exactly a sure bet, but can management ignore the holes on this team and hope for the best? Stay tuned.",
       legacy: true,
       author: "Lori Bennett",
       originalPost: "02/22/2021",

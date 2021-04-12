@@ -20,9 +20,11 @@ class SubcategorizationsController < ApplicationController
 
   # GET /subcategorizations/1
   def show
-
+articles = @subcategorization.articles.order(id: :desc)
+now = Time.zone.now.strftime("%Y-%m-%dT%H:%M:%S")
+art = articles.where("publish_time < ?", now).or(articles.where(publish_time: nil))
  categorization = Categorization.find(@subcategorization.categorization_id)
-    render json: { header: @subcategorization[:name], articles: @subcategorization.articles.order(id: :desc), subcategorizations: categorization.subcategorizations.order(id: :desc)  }
+    render json: { header: @subcategorization[:name], articles: art, subcategorizations: categorization.subcategorizations.order(id: :desc)  }
   end
 
   # POST /subcategorizations

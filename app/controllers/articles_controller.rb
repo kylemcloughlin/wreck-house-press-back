@@ -3,15 +3,19 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    
     @articles = Article.all.order(id: :desc)
+    now = Time.zone.now.strftime("%Y-%m-%dT%H:%M:%S")
+    art =  @articles.where('publish_time < ?', now).or(@articles.where(publish_time: nil))
 
-    render json: @articles
+    
+    # byebug 
+
+    render json: art
   end
 
   # GET /articles/1
   def show
-  
+  # byebug
     render json: @article
   end
 
@@ -37,10 +41,27 @@ class ArticlesController < ApplicationController
     else
       subcategory = nil
     end
- 
+    length =  Article.all.count
     
+    y = input[:title].split(" ")
+    x = y.select { |v| v != "-" }
+    xx = x.select { |v| v != "&" }
+    z = xx.push(length)
+    output = z.join("-").downcase!
+    url = output.tr("(-).',?><!@{$%^&*}:#", "")
+    
+
+    if input[:breaking]
+      publish_time = nil
+    else
+      publish_time = input[:publishTime]
+      # byebug
+    end
+    # byebug
     #date
-date = Date.today
+    date = Date.today
+
+# byebug
     @article = Article.new({
       title: input[:title],
       subtitles: input[:subtitles],
@@ -50,11 +71,15 @@ date = Date.today
       photos: input[:photos],
       fallback: input[:photos],
       rt: input[:rt],
-      originalPost: date.strftime("%d/%m/%Y"),
+      originalPost: date.strftime("%m/%d/%Y"),
       legacy: false,
       categorization: category,
       subcategorization: subcategory,
+      url: url,
+      publish_time: publish_time,
     })
+
+
     if @article.save
       render json: @article, status: :created, location: @article
     else
