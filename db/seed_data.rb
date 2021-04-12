@@ -3057,7 +3057,7 @@ Overall the experience was nothing but positive for the owners and employees of 
   originalPost: "09/21/2020",
   subcategorization: nil,
   },{
-    title: "CNA opens new building – again",
+    title: "CNA opens new building again",
     categorization: "Local News",
     photos: ["https://static.wixstatic.com/media/3f4fd9_a60bd6357a6d4388b185df2398de065d~mv2.jpg/v1/fill/w_740,h_333,al_c,q_90,usm_0.66_1.00_0.01/3f4fd9_a60bd6357a6d4388b185df2398de065d~mv2.webp"],
   subtitles: "The College of the North Atlantic’s Heavy Equipment Centre of Excellence in Stephenville. - © J. René Roy",
