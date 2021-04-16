@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   delete :cancel, to: "customers#destroy"
   delete :logout, to: "sessions#destroy"
   get :logged_in, to: "sessions#logged_in"
+  get :search, to: "articles#search" 
   post :about, to: "contact#create"
   post :rescue, to: "users#rescue"
   post :reset, to: "users#reset"

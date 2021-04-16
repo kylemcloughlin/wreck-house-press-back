@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-
+    # byebug
     @user = User.create!(
       email: params['user']['email'],
       password: params['user']['password'],
@@ -15,12 +15,12 @@ class UsersController < ApplicationController
       c_id: nil,
       admin: false,
       legacy: false,
-    
+      
     )
     if @user
       payload = {user_id: @user.id}
       token = create_token(payload)
-      NotifierMailer.with({email: @user.email}).welcome.deliver_now
+      # NotifierMailer.with({email: @user.email}).welcome.deliver_now
       render  locals:{token: token}, json: { logged_in: true, user: @user, token: token }, status: :created
     else
       render json: {status: 500}

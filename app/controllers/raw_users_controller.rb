@@ -18,12 +18,6 @@ class RawUsersController < ApplicationController
     raw_user = RawUser.find_by(token: params[:token])
 if raw_user.present? 
   admin =  false
-  if raw_user.email === "rjroy@wreckhousepress.com" || "rroy@wreckhousepress.com"
-    admin =  true
-  end
-   if raw_user.email === "kylemcloughlindev@gmail.com"
-    admin =  true
-  end
   user = User.create!({
               email: raw_user.email,
               expiry: raw_user.expiry,
