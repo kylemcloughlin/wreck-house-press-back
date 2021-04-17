@@ -43,7 +43,12 @@ end
   end
 
 
+def new_email ##post
+    new_raw_user = RawUser.create(email: params[:email])
+    new_raw_user.send_password_reset
+ render json: { user: new_raw_user }, status: :ok
 
+end
 
 
 
