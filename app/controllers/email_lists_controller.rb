@@ -15,7 +15,6 @@ class EmailListsController < ApplicationController
 
   # POST /email_lists
   def create
-    byebug
     @email_list = EmailList.new(email_list_params)
 
     if @email_list.save

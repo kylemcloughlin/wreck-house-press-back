@@ -15,7 +15,9 @@ class RawUsersController < ApplicationController
 
   # POST /raw_users
   def create
-    raw_user = RawUser.find_by(token: params[:token])
+
+  
+  raw_user = RawUser.find_by(token: params[:token])
 if raw_user.present? 
   admin =  false
   user = User.create!({
@@ -44,8 +46,9 @@ end
 
 
 def new_email ##post
-    new_raw_user = RawUser.create(email: params[:email])
-    new_raw_user.send_password_reset
+  date = Date.today + 3.months
+  new_raw_user = RawUser.create(email: params[:email], expiry: date.strftime("%d/%m/%Y"))
+  new_raw_user.send_password_reset
  render json: { user: new_raw_user }, status: :ok
 
 end
