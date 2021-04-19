@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :advertisments
+  resources :advertisements
   resources :email_lists
   resources :editions
   # resources :raw_users

@@ -38,8 +38,8 @@ class EmailListsController < ApplicationController
     @email_list.destroy
   end
   def set
-     execute = Time.now + 6.minute
-    WeeklyEmailJob.set(wait_until: execute).perform_later
+     edition = Edition.last
+    WeeklyEmailJob.set(wait_until: edition.publish).perform_later
 
       render json:{}, status: :ok
   end
