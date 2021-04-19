@@ -37,6 +37,11 @@ class EmailListsController < ApplicationController
   def destroy
     @email_list.destroy
   end
+  def set
+    # byebug
+    NotifierMailer.weekly.deliver_now
+      render json:{}, status: :ok
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

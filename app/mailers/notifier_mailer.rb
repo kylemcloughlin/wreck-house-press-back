@@ -43,4 +43,13 @@ def legacy(raw_user)
 
 end
 
+def weekly
+           mail(to: "kylemcloughlindev@gmail.com",
+              subject: "Weekly Email Test",
+              content_type: "text/html")
+end
+
+
+
+
 end
