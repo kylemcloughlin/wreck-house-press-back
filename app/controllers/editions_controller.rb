@@ -4,7 +4,7 @@ class EditionsController < ApplicationController
   # GET /editions
   def index
     @editions = Edition.all
-    now = Time.zone.now.strftime("%Y-%m-%dT%H:%M:%S")
+    now = Time.zone.now
 
     last = @editions.where("publish < ?", now.strftime("%Y-%m-%dT%H:%M:%S")).or(@editions.where(publish: nil))
     # byebug
