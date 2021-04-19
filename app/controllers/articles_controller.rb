@@ -43,14 +43,13 @@ class ArticlesController < ApplicationController
     end
     length =  Article.all.count
     
-    y = input[:title].split(" ")
+    y = input[:url].split(" ")
     x = y.select { |v| v != "-" }
     xx = x.select { |v| v != "&" }
     z = xx.push(length)
-    output = z.join("-").downcase!
-    url = output.tr("(-).',?><!@{$%^&*}:#", "")
-    
-
+    output = z.join("-").downcase
+    url = output
+    # byebug
     if input[:breaking]
       publish_time = nil
     else

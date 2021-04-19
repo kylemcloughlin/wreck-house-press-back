@@ -38,8 +38,9 @@ class EmailListsController < ApplicationController
     @email_list.destroy
   end
   def set
-    # byebug
-    NotifierMailer.weekly.deliver_now
+     execute = Time.now + 6.minute
+    WeeklyEmailJob.set(wait_until: execute).perform_later
+
       render json:{}, status: :ok
   end
 

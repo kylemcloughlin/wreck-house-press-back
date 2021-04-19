@@ -44,8 +44,12 @@ def legacy(raw_user)
 end
 
 def weekly
-           mail(to: "kylemcloughlindev@gmail.com",
-              subject: "Weekly Email Test",
+
+@email = params[:email]
+@pdf = params[:link]
+
+       mail(to: @email,
+              subject: "Wreckhouse Press Weekly ",
               content_type: "text/html")
 end
 

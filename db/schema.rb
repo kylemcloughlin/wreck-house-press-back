@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_17_145825) do
+ActiveRecord::Schema.define(version: 2021_04_19_153839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "advertisments", force: :cascade do |t|
+    t.string "linkimg"
+    t.boolean "visible"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -46,6 +53,7 @@ ActiveRecord::Schema.define(version: 2021_04_17_145825) do
     t.string "pdf"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "publish"
   end
 
   create_table "email_lists", force: :cascade do |t|

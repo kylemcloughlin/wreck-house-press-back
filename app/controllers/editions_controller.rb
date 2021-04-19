@@ -4,8 +4,11 @@ class EditionsController < ApplicationController
   # GET /editions
   def index
     @editions = Edition.all
+    now = Time.zone.now.strftime("%Y-%m-%dT%H:%M:%S")
 
-    render json: @editions
+    last = @editions.where("publish < ?", now.strftime("%Y-%m-%dT%H:%M:%S")).or(@editions.where(publish: nil))
+    # byebug
+    render json: last.last
   end
 
   # GET /editions/1
