@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   post :about, to: "contact#create"
   post :rescue, to: "users#rescue"
   post :reset, to: "users#reset"
-  get :set, to: "email_lists#set"
+  post :set, to: "email_lists#set"
   post :new_email, to: "raw_users#new_email"
   resources :articles
   resources :subcategorizations

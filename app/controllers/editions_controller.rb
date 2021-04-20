@@ -5,9 +5,7 @@ class EditionsController < ApplicationController
   def index
     @editions = Edition.all
     now = Time.zone.now
-
     last = @editions.where("publish < ?", now.strftime("%Y-%m-%dT%H:%M:%S")).or(@editions.where(publish: nil))
-    # byebug
     render json: last.last
   end
 
@@ -18,6 +16,7 @@ class EditionsController < ApplicationController
 
   # POST /editions
   def create
+    byebug
     @edition = Edition.new(edition_params)
 
     if @edition.save
@@ -49,6 +48,6 @@ class EditionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def edition_params
-      params.require(:edition).permit(:pdf)
+      params.require(:edition).permit(:pdf, :publish)
     end
 end

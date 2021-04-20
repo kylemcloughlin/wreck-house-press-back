@@ -38,8 +38,9 @@ class EmailListsController < ApplicationController
     @email_list.destroy
   end
   def set
-     edition = Edition.last
-    WeeklyEmailJob.set(wait_until: edition.publish).perform_later
+    x = params[:email]
+    #  byebug 
+    WeeklyEmailJob.set(wait_until: x.to_datetime).perform_later
 
       render json:{}, status: :ok
   end

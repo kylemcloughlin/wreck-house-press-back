@@ -4,8 +4,14 @@ class AdvertisementsController < ApplicationController
   # GET /advertisements
   def index
     @advertisements = Advertisement.all
-
-    render json: @advertisements
+    # byebug
+    if @advertisement ===  nil
+      render json: {visable: false}
+    else
+    now = Time.zone.now
+    last = @advertisements.where("publish < ?", now.strftime("%Y-%m-%dT%H:%M:%S")).or(@advertisements.where(publish: nil))
+    render json: last.last
+    end
   end
 
   # GET /advertisements/1
@@ -16,7 +22,7 @@ class AdvertisementsController < ApplicationController
   # POST /advertisements
   def create
     @advertisement = Advertisement.new(advertisement_params)
-    byebug
+    
     if @advertisement.save
       render json: @advertisement, status: :created, location: @advertisement
     else
@@ -26,7 +32,8 @@ class AdvertisementsController < ApplicationController
 
   # PATCH/PUT /advertisements/1
   def update
-    if @advertisement.update(advertisement_params)
+    @advertisement.visable = params[:advertisement][:visable]
+    if @advertisement.save
       render json: @advertisement
     else
       render json: @advertisement.errors, status: :unprocessable_entity
