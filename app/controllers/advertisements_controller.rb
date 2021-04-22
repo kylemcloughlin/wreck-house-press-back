@@ -5,7 +5,7 @@ class AdvertisementsController < ApplicationController
   def index
     @advertisements = Advertisement.all
     # byebug
-    if @advertisement ===  nil
+    if @advertisements ===  nil
       render json: {visable: false}
     else
     now = Time.zone.now
