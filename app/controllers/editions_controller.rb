@@ -16,7 +16,7 @@ class EditionsController < ApplicationController
 
   # POST /editions
   def create
-    byebug
+    
     @edition = Edition.new(edition_params)
 
     if @edition.save

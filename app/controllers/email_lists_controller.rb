@@ -40,7 +40,7 @@ class EmailListsController < ApplicationController
   def set
     x = params[:email]
     #  byebug 
-    WeeklyEmailJob.set(wait_until: x.to_datetime).perform_later
+    # WeeklyEmailJob.set(wait_until: x.to_datetime).perform_later
 
       render json:{}, status: :ok
   end
