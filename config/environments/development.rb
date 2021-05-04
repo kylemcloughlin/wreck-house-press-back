@@ -41,7 +41,7 @@ Rails.application.configure do
       :port                 => 587,
       :user_name            => ENV['USER_NAME'],
       :password             => ENV['EMAIL_PASS'],
-  
+      
       :authentication       => 'login',
   }
 
