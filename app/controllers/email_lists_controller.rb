@@ -40,7 +40,7 @@ class EmailListsController < ApplicationController
   def set
     time = params[:email] ## this is the time that the email is set to send
     #  byebug 
-    WeeklyEmailJob.set(wait_until: time.to_datetime).perform_later
+    WeeklyWorker.perform_at(time.to_datetime)
 
       render json:{}, status: :ok
   end
