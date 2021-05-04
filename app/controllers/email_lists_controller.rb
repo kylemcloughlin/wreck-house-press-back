@@ -38,9 +38,9 @@ class EmailListsController < ApplicationController
     @email_list.destroy
   end
   def set
-    x = params[:email]
+    time = params[:email] ## this is the time that the email is set to send
     #  byebug 
-    # WeeklyEmailJob.set(wait_until: x.to_datetime).perform_later
+    WeeklyEmailJob.set(wait_until: time.to_datetime).perform_later
 
       render json:{}, status: :ok
   end

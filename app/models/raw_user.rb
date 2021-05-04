@@ -2,9 +2,9 @@ class RawUser < ApplicationRecord
   
   def send_password_reset
     self[:token] = generate_base64_token
-    # self.password_reset_sent_at = Time.zone.now
     save!
     NotifierMailer.legacy(self).deliver_now
+    # self.password_reset_sent_at = Time.zone.now
   end
 
  

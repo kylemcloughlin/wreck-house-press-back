@@ -46,12 +46,21 @@ end
 
 
 def new_email ##post
-  date = Date.today + 3.months
-  new_raw_user = RawUser.create(email: params[:email], expiry: date.strftime("%d/%m/%Y"))
+  if params[:subscription_length] === '3'
+    date = Date.today + 3.months
+    date = date.strftime("%d/%m/%Y")
+  elsif params[:subscription_length] === '6'
+    date = Date.today + 3.months
+    date = date.strftime("%d/%m/%Y")
+  else
+    date = 'annual'
+  end
+  new_raw_user = RawUser.create(email: params[:email], expiry: date)
   new_raw_user.send_password_reset
  render json: { user: new_raw_user }, status: :ok
 
 end
+
 
 
 

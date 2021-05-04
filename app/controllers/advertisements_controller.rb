@@ -22,7 +22,6 @@ class AdvertisementsController < ApplicationController
   # POST /advertisements
   def create
     @advertisement = Advertisement.new(advertisement_params)
-    
     if @advertisement.save
       render json: @advertisement, status: :created, location: @advertisement
     else

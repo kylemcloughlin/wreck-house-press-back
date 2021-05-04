@@ -17,7 +17,7 @@ Rails.application.configure do
       :authentication       => 'login',
 
   }
-
+  config.active_job.queue_adapter = :sidekiq
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
