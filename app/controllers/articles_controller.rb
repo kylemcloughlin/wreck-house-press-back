@@ -1,3 +1,4 @@
+require "http"
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :update, :destroy]
 
@@ -77,7 +78,9 @@ class ArticlesController < ApplicationController
       url: url,
       publish_time: publish_time,
     })
-
+    if input[:breaking] === true 
+      HTTP.post("https://api.vercel.com/v1/integrations/deploy/prj_IyLVq5fc7aXdQctLkHAuKqOpepkw/FTeVTgMhXC")    
+    end
 
     if @article.save
       render json: @article, status: :created, location: @article
@@ -105,6 +108,7 @@ class ArticlesController < ApplicationController
     @article.categorization_id = categorization_id
     @article.body = body
     if @article.save
+      HTTP.post("https://api.vercel.com/v1/integrations/deploy/prj_IyLVq5fc7aXdQctLkHAuKqOpepkw/FTeVTgMhXC")
       render json: @article, status: :ok
     else
       render json: @article.errors, status: :unprocessable_entity
