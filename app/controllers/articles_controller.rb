@@ -116,6 +116,8 @@ class ArticlesController < ApplicationController
   def destroy
     # byebug
     @article.destroy
+      HTTP.post("https://api.vercel.com/v1/integrations/deploy/prj_IyLVq5fc7aXdQctLkHAuKqOpepkw/FTeVTgMhXC")
+
   end
 
 
