@@ -105,7 +105,15 @@ end
       render json: {error:  ['Link not valid or expired. Try generating a new link.']}, status: :not_found
     end
   end
-
+  def over_ride
+    byebug
+    params[:output] 
+      # @articles = Article.where("lower(title) LIKE lower(?)", "%#{params[:output]}%")      
+      # byebug
+    
+      # render json: {articles: @articles.first(25)},status: :ok
+    
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

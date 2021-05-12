@@ -51,14 +51,11 @@ class ArticlesController < ApplicationController
     output = z.join("-").downcase
     url = output
     # byebug
-    if input[:breaking]
-      publish_time = nil
-    else
-      publish_time = input[:publishTime]
+  
+      # publish_time = input[:publishTime]
       # byebug
-    end
-    # byebug
-    #date
+  
+   
     date = Date.today
 
 # byebug
@@ -76,7 +73,7 @@ class ArticlesController < ApplicationController
       categorization: category,
       subcategorization: subcategory,
       url: url,
-      publish_time: publish_time,
+      publish_time: input[:publishTime],
     })
     if input[:breaking] === true 
       HTTP.post("https://api.vercel.com/v1/integrations/deploy/prj_IyLVq5fc7aXdQctLkHAuKqOpepkw/FTeVTgMhXC")    
@@ -117,6 +114,7 @@ class ArticlesController < ApplicationController
 
   # DELETE /articles/1
   def destroy
+    # byebug
     @article.destroy
   end
 
