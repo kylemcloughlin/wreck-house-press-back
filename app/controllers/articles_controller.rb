@@ -1,4 +1,5 @@
 require "http"
+
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :update, :destroy]
 
@@ -6,17 +7,16 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all.order(id: :desc)
     now = Time.zone.now.strftime("%Y-%m-%dT%H:%M:%S")
-    art =  @articles.where('publish_time < ?', now).or(@articles.where(publish_time: nil))
+    art = @articles.where("publish_time < ?", now).or(@articles.where(publish_time: nil))
 
-    
-    # byebug 
+    # byebug
 
     render json: art
   end
 
   # GET /articles/1
   def show
-  # byebug
+    # byebug
     render json: @article
   end
 
@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
 
     case sub_cat.to_i
     when 1
-      subcategory = Subcategorization.find(sub_cat.to_i) 
+      subcategory = Subcategorization.find(sub_cat.to_i)
     when 2
       subcategory = Subcategorization.find(sub_cat.to_i)
     when 3
@@ -42,8 +42,8 @@ class ArticlesController < ApplicationController
     else
       subcategory = nil
     end
-    length =  Article.all.count
-    
+    length = Article.all.count
+
     y = input[:url].split(" ")
     x = y.select { |v| v != "-" }
     xx = x.select { |v| v != "&" }
@@ -51,14 +51,13 @@ class ArticlesController < ApplicationController
     output = z.join("-").downcase
     url = output
     # byebug
-  
-      # publish_time = input[:publishTime]
-      # byebug
-  
-   
+
+    # publish_time = input[:publishTime]
+    # byebug
+
     date = Date.today
 
-# byebug
+    # byebug
     @article = Article.new({
       title: input[:title],
       subtitles: input[:subtitles],
@@ -75,10 +74,17 @@ class ArticlesController < ApplicationController
       url: url,
       publish_time: input[:publishTime],
     })
-    if input[:breaking] === true 
-      HTTP.post("https://api.vercel.com/v1/integrations/deploy/prj_IyLVq5fc7aXdQctLkHAuKqOpepkw/FTeVTgMhXC")    
+    if input[:breaking] === true
+      x = input[:publishTime].to_time
+      y = x + 24.hours
+      DeployWorker.perform_at(y.to_datetime)
+      HTTP.post("https://api.vercel.com/v1/integrations/deploy/prj_IyLVq5fc7aXdQctLkHAuKqOpepkw/FTeVTgMhXC")
     end
+    if input[:postType] === false
+      x = input[:publishTime].to_time
+      DeployWorker.perform_at(x.to_datetime)
 
+    end
     if @article.save
       render json: @article, status: :created, location: @article
     else
@@ -89,8 +95,8 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   def update
     title = params[:updatedArticle][:title]
-    author  = params[:updatedArticle][:author]
-    photos  = params[:updatedArticle][:photos]
+    author = params[:updatedArticle][:author]
+    photos = params[:updatedArticle][:photos]
     subtitles = params[:updatedArticle][:rt]
     rt = params[:updatedArticle][:rt]
     subcategorization_id = params[:updatedArticle][:subcategorization_id]
@@ -116,20 +122,16 @@ class ArticlesController < ApplicationController
   def destroy
     # byebug
     @article.destroy
-      HTTP.post("https://api.vercel.com/v1/integrations/deploy/prj_IyLVq5fc7aXdQctLkHAuKqOpepkw/FTeVTgMhXC")
-
+    HTTP.post("https://api.vercel.com/v1/integrations/deploy/prj_IyLVq5fc7aXdQctLkHAuKqOpepkw/FTeVTgMhXC")
   end
-
 
   def search
-      params[:output] 
-      @articles = Article.where("lower(title) LIKE lower(?)", "%#{params[:output]}%")      
-      # byebug
-    
-      render json: {articles: @articles.first(25)},status: :ok
-    
-  end
+    params[:output]
+    @articles = Article.where("lower(title) LIKE lower(?)", "%#{params[:output]}%")
+    # byebug
 
+    render json: { articles: @articles.first(25) }, status: :ok
+  end
 
   private
 

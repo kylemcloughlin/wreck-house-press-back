@@ -106,14 +106,42 @@ end
     end
   end
   def over_ride
-    byebug
-    params[:output] 
-      # @articles = Article.where("lower(title) LIKE lower(?)", "%#{params[:output]}%")      
-      # byebug
-    
-      # render json: {articles: @articles.first(25)},status: :ok
-    
+    params[:email] 
+    user = User.find_by(email: params[:email])
+    if user.present?
+    render json: {c_id: user.c_id, s_id:user.s_id, admin: user.admin, expiry: user.expiry}, status: :ok
+      else
+        render status: :unprocessable_entity
+      end    
   end
+def over_ride_update
+  email = params[:email]
+  admin = params[:admin]
+  expiry = params[:subscription]
+  user = User.find_by(email: email)
+
+  if admin === 'opposite'
+    opp = !user.admin
+    user.admin = opp 
+  end
+case expiry
+when '3'
+  date = Date.today + 3.months
+  user.expiry = date
+
+when '6'
+ date = Date.today + 6.months
+user.expiry = date
+else
+user.expiry = 'annual'
+end
+    if user.save
+      render json: user, status: :ok
+    else
+      render json:  user.error, status: :unprocessable_entity
+    end
+end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

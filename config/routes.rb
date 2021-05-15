@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   resources :subscriptions
   resources :users
   resources :sessions
-  get :over_ride, to: "users#over_ride"
+  post :over_ride, to: "users#over_ride"
+  post :over_ride_update, to: "users#over_ride_update"
   post :customers, to: "customers#create"
   delete :cancel, to: "customers#destroy"
   delete :logout, to: "sessions#destroy"
