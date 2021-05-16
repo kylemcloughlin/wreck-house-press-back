@@ -90,7 +90,14 @@ end
       }
     end
   end
-
+  def token_check 
+    user = User.find_by(password_reset_token: params[:token])
+    if user.present? 
+    render status: :ok
+else
+  render json: { error: ["Link not valid or expired. Try generating a new link."] }, status: :not_found
+end
+  end 
 
   def reset
     user = User.find_by(password_reset_token: params[:token])
