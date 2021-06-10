@@ -3,7 +3,7 @@ class ContactMailer < ApplicationMailer
   def send_about_email
       @email = params[:email]
      @email_body = params[:email_body]
-  mail(to: "info@wreckhousepress.com",
+  mail(to: "wreckhousepress.utility @gmail.com",
        subject: "General Inquiry",
        bcc: ["wreckhousepress.utility@gmail.com"])
   end
@@ -11,14 +11,14 @@ class ContactMailer < ApplicationMailer
   def send_publishing_email
      @email = params[:email]
      @email_body = params[:email_body]
-  mail(to: 'info@wreckhousepress.com',
+  mail(to: 'wreckhousepress.utility @gmail.com',
        subject: "Publishing Inquiry",
        bcc: ["wreckhousepress.utility@gmail.com"])
   end
   def send_advertising_email
        @email = params[:email]
        @email_body = params[:email_body]
-  mail(to: "info@wreckhousepress.com",
+  mail(to: "wreckhousepress.utility@gmail.com",
        subject: "Advertising Inquiry",
        bcc: ["wreckhousepress.utility@gmail.com"])
 end

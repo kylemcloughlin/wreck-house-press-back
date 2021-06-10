@@ -7,7 +7,7 @@ class RawUsersController < ApplicationController
 
     @raw_users.each do |user|
        puts "#{user}"
-      user.send_password_reset
+      # user.send_password_reset
     end
     render status: :ok
   end

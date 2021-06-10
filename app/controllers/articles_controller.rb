@@ -105,6 +105,7 @@ class ArticlesController < ApplicationController
     @article.title = title
     @article.author = author
     @article.photos = photos
+    @article.fallback = photos
     @article.subtitles = subtitles
     @article.rt = rt
     @article.subcategorization_id = subcategorization_id
